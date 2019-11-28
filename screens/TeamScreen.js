@@ -33,33 +33,21 @@ export default class TeamScreen extends React.Component {
           </View>
 
           <View style={styles.getStartedContainer}>
-            //{this._maybeRenderDevelopmentModeWarning()}
+            {this._maybeRenderDevelopmentModeWarning()}
 
-            <Text style={styles.getStartedText}>Get started by opening</Text>
+            <Text style={styles.getStartedText}>Ceci est l'onglet destiné aux équipes</Text>
 
-            <View style={[styles.codeHighlightContainer, styles.teamScreenFilename]}>
-              <MonoText style={styles.codeHighlightText}>screens/TeamScreen.js</MonoText>
-            </View>
+
 
             <Text style={styles.getStartedText}>
-              Change this text and your app will WASSIM automatically reload teeeeeeeest.
+              Les équipes auront ici accès à leurs planings et aux coordonnées des responsables
             </Text>
           </View>
 
-          <View style={styles.helpContainer}>
-            <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
-              <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
-            </TouchableOpacity>
-          </View>
+
         </ScrollView>
 
-        <View style={styles.tabBarInfoContainer}>
-          <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
 
-          <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-            <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
-          </View>
-        </View>
       </View>
     );
   }
