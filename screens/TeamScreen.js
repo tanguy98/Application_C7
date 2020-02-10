@@ -37,7 +37,10 @@ export default class TeamScreen extends React.Component {
 
   render() {
     return (
-      <View>
+      <ScrollView>
+        <View style={styles.titleView}>
+          <Text style={styles.titleText}>Femmes</Text>
+        </View>
         {
           list.map((item, i) => (
             <ListItem
@@ -50,7 +53,22 @@ export default class TeamScreen extends React.Component {
             />
           ))
         }
-      </View>
+        <View style={styles.titleView}>
+          <Text style={styles.titleText}>Hommes</Text>
+        </View>
+        {
+          list.map((item, i) => (
+            <ListItem
+              key={i}
+              title={item.title}
+              leftIcon={{ name: item.icon }}
+              bottomDivider
+              chevron
+              onPress={() => this.props.navigation.navigate("PdfScreen")}
+            />
+          ))
+        }
+      </ScrollView>
 
     );
   }
@@ -179,4 +197,14 @@ const styles = StyleSheet.create({
   pdf: {
     flex:1
   },
+  titleView: {
+    height:50,
+    backgroundColor:'darkgreen',
+    justifyContent:'center',
+    alignItems:'center',
+  },
+  titleText: {
+    fontSize: 35,
+    color:'white'
+  }
 });
