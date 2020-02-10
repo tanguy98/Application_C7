@@ -8,12 +8,14 @@ import TeamScreen from '../screens/TeamScreen';
 import ResultsScreen from '../screens/ResultsScreen';
 import InfosScreen from '../screens/InfosScreen';
 import PlanScreen from '../screens/PlanScreen';
+import PdfScreen from '../screens/PdfScreen';
 import ProgramScreen from '../screens/ProgramScreen';
 import SecondBar from '../components/SecondBar';
 import ContactsScreen from '../screens/ContactsScreen';
 
 const TeamStack = createStackNavigator({
   Team: TeamScreen,
+  PdfScreen : PdfScreen,
 });
 
 TeamStack.navigationOptions = {

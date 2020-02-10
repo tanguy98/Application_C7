@@ -9,46 +9,49 @@ import {
   View,
 } from 'react-native';
 import { WebBrowser } from 'expo';
+import { ListItem } from 'react-native-elements'
+
+
 
 import { MonoText } from '../components/StyledText';
+
+const list = [
+  {
+    title: 'Equipe 1',
+    icon: 'add-circle-outline'
+  },
+  {
+    title: 'Equipe 2',
+    icon: 'add-circle-outline'
+  },
+]
 
 export default class TeamScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
 
+  constructor(props) {
+        super(props);
+    }
+
   render() {
     return (
-      <View style={styles.container}>
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <View style={styles.welcomeContainer}>
-            <Image
-              source={
-                __DEV__
-                  ? require('../assets/images/robot-dev.png')
-                  : require('../assets/images/robot-prod.png')
-              }
-              style={styles.welcomeImage}
+      <View>
+        {
+          list.map((item, i) => (
+            <ListItem
+              key={i}
+              title={item.title}
+              leftIcon={{ name: item.icon }}
+              bottomDivider
+              chevron
+              onPress={() => this.props.navigation.navigate("PdfScreen")}
             />
-          </View>
-
-          <View style={styles.getStartedContainer}>
-            {this._maybeRenderDevelopmentModeWarning()}
-
-            <Text style={styles.getStartedText}>Ceci est l'onglet destiné aux équipes</Text>
-
-
-
-            <Text style={styles.getStartedText}>
-              Les équipes auront ici accès à leurs planings et aux coordonnées des responsables
-            </Text>
-          </View>
-
-
-        </ScrollView>
-
-
+          ))
+        }
       </View>
+
     );
   }
 
@@ -172,5 +175,8 @@ const styles = StyleSheet.create({
   helpLinkText: {
     fontSize: 14,
     color: '#2e78b7',
+  },
+  pdf: {
+    flex:1
   },
 });
