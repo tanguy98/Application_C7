@@ -1,14 +1,14 @@
+//IMPORTS
 import React from 'react';
-import { ExpoConfigView } from '@expo/samples';
+import {Text} from 'react-native';
 
-export default class InfosScreen extends React.Component {
-  static navigationOptions = {
-    title: 'app.json',
-  };
+//COMPONENTS
+class InfosScreen extends React.Component {
 
   render() {
-    /* Go ahead and delete ExpoConfigView and replace it with your
-     * content, we just wanted to give you a quick view of your config */
-    return <ExpoConfigView />;
+    return <Text>Fil d'actualité de l'app : publications de la com !</Text>;
   }
 }
+
+//EXPORTS
+export default InfosScreen;

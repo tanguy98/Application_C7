@@ -1,6 +1,9 @@
+//IMPORTS
+
 import React from 'react';
 import { Platform } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import { createStackNavigator, createBottomTabNavigator, createAppContainer, createDrawerNavigator } from 'react-navigation';
+import Icon from '@expo/vector-icons/Ionicons';
 
 import TabBarIcon from '../components/TabBarIcon';
 import TeamScreen from '../screens/TeamScreen';
@@ -8,7 +11,13 @@ import ResultsScreen from '../screens/ResultsScreen';
 import InfosScreen from '../screens/InfosScreen';
 import PlanScreen from '../screens/PlanScreen';
 import ProgramScreen from '../screens/ProgramScreen';
+import SecondBar from '../components/SecondBar';
+import ContactsScreen from '../screens/ContactsScreen';
 
+
+// NAVIGATION
+
+// TeamStack
 const TeamStack = createStackNavigator({
   Team: TeamScreen,
 });
@@ -27,6 +36,7 @@ TeamStack.navigationOptions = {
   ),
 };
 
+// ProgramStack
 const ProgramStack = createStackNavigator({
   Program: ProgramScreen,
 });
@@ -45,6 +55,7 @@ ProgramStack.navigationOptions = {
   ),
 };
 
+// PlanStack
 const PlanStack = createStackNavigator({
   Plan: PlanScreen,
 });
@@ -63,6 +74,7 @@ PlanStack.navigationOptions = {
   ),
 };
 
+// ResultStack
 const ResultsStack = createStackNavigator({
   Results: ResultsScreen,
 });
@@ -77,13 +89,12 @@ ResultsStack.navigationOptions = {
   ),
 };
 
+// InfosStack
 const InfosStack = createStackNavigator({
   Infos: InfosScreen,
 });
 
 InfosStack.navigationOptions = {
-
-
   tabBarLabel: 'Infos',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
@@ -97,10 +108,51 @@ InfosStack.navigationOptions = {
 
 };
 
-export default createBottomTabNavigator({
+// ContactsStack
+const ContactsStack = createStackNavigator({
+  Infos: ContactsScreen,
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => {
+      return {
+        headerLeft: (
+          <Icon style={{ paddingLeft: 10 }} onPress={() => navigation.openDrawer()} name={Platform.OS === 'ios' ? 'ios-menu' : 'md-menu'} size={30} />
+        )
+      };
+    }
+  }
+);
+
+
+const MainTabNavigator = createBottomTabNavigator({
   ProgramStack,
   InfosStack,
   ResultsStack,
   PlanStack,
   TeamStack,
 });
+
+const MainStackNavigator = createStackNavigator(
+  {
+    MainTabNavigator: MainTabNavigator
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => {
+      return {
+        headerLeft: (
+          <Icon style={{ paddingLeft: 10 }} onPress={() => navigation.openDrawer()} name={Platform.OS === 'ios' ? 'ios-menu' : 'md-menu'} size={30} />
+        )
+      };
+    }
+  }
+);
+
+//DrawerNavigator (contient tous les onglets)
+const AppDrawerNavigator = createDrawerNavigator({
+  MainStackNavigator: MainStackNavigator,
+  Contacts : ContactsStack
+});
+
+
+// EXPORT :
+export default createAppContainer(AppDrawerNavigator);
