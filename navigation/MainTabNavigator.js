@@ -12,6 +12,7 @@ import PdfScreen from '../screens/PdfScreen';
 import ProgramScreen from '../screens/ProgramScreen';
 import SecondBar from '../components/SecondBar';
 import ContactsScreen from '../screens/ContactsScreen';
+import StaffScreen from '../screens/StaffScreen';
 
 const TeamStack = createStackNavigator({
   Team: TeamScreen,
@@ -116,6 +117,19 @@ const ContactsStack = createStackNavigator({
   }
 );
 
+const StaffStack = createStackNavigator({
+  Infos: StaffScreen,
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => {
+      return {
+        headerLeft: (
+          <Icon style={{ paddingLeft: 10 }} onPress={() => navigation.openDrawer()} name={Platform.OS === 'ios' ? 'ios-menu' : 'md-menu'} size={30} />
+        )
+      };
+    }
+  }
+);
 
 
 const MainTabNavigator = createBottomTabNavigator({
@@ -143,7 +157,8 @@ const MainStackNavigator = createStackNavigator(
 
 const AppDrawerNavigator = createDrawerNavigator({
   MainStackNavigator: MainStackNavigator,
-  Contacts : ContactsStack
+  Contacts : ContactsStack,
+  Staff : StaffStack
 });
 
 
