@@ -1,17 +1,7 @@
 // IPMORTS
 import React from 'react';
-import {
-  Image,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-import { WebBrowser } from 'expo';
-
-import { MonoText } from '../components/StyledText';
+import {View, Text} from 'native-base';
+import CustomHeader from '../components/CustomHeader';
 
 
 // COMPONENT :
@@ -114,9 +104,13 @@ class TeamScreen extends React.Component {
 
   render() {
     return (
-            <Text>
-              Les équipes auront ici accès à leurs planings et aux coordonnées des responsables
-            </Text>
+      <View>
+        <CustomHeader title="Program" isHome={true} navigation={this.props.navigation} />
+        <Text>
+              Teams will have acess to their timetables and the contacts of their referent for the tournament
+        </Text>
+      </View>
+            
 
     );
   }

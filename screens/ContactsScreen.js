@@ -1,7 +1,9 @@
 //IMPORTS
 
 import React from 'react';
-import {Text, View } from 'react-native';
+import {Text, View } from 'native-base';
+
+import CustomHeader from '../components/CustomHeader';
 
 // COMPONENTS :
 
@@ -10,7 +12,8 @@ class ContactsScreen extends React.Component {
   render () {
     return(
       <View>
-        <Text>Contacts</Text>
+        <CustomHeader title="Contacts" isHome={true} navigation={this.props.navigation} />
+        <Text>Useful Contacts : buses, urgency,...</Text>
       </View>
     )
   }

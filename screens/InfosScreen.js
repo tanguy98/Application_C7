@@ -1,12 +1,21 @@
 //IMPORTS
 import React from 'react';
-import {Text} from 'react-native';
+import {Text, View} from 'native-base';
+
+import CustomHeader from '../components/CustomHeader';
 
 //COMPONENTS
 class InfosScreen extends React.Component {
 
   render() {
-    return <Text>Fil d'actualité de l'app : publications de la com !</Text>;
+    return (
+      <View style={{flex:1}}>
+        <CustomHeader title="Infos" isHome={true} navigation={this.props.navigation} />
+          <Text>
+            This page will display the most recent posts and informations from the Centrale 7's
+          </Text>      
+    </View>
+    )
   }
 }
 

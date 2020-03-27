@@ -1,18 +1,20 @@
 //IMPORTS
 import React from 'react';
-import {Text} from 'react-native';
-import { ScrollView, StyleSheet } from 'react-native';
-import { ExpoLinksView } from '@expo/samples';
+import {View, Text} from 'native-base';
+
+
+import CustomHeader from '../components/CustomHeader';
 
 //COMPONENTS
 class ResultsScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Results',
-  };
 
   render() {
     return (
-      <Text> Onglet de résultats des matchs</Text>
+      <View>
+        <CustomHeader title="Results" isHome={true} navigation={this.props.navigation} />
+        <Text> Results of the past games + of the games currently played</Text>
+      </View>
+
     );
   }
 }

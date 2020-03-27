@@ -1,6 +1,6 @@
 {
-  "urlRandomness": "eu-28m",
-  "hostType": "lan",
+  "urlRandomness": "jj-vc7",
+  "hostType": "localhost",
   "lanType": "ip",
   "dev": true,
   "minify": false,

@@ -1,3 +1,5 @@
+import 'react-native-gesture-handler'; // nothing above this import
+
 //IMPORTS
 
 import { AppLoading } from 'expo';
@@ -37,16 +39,16 @@ class App extends React.Component{
 
   async loadResourcesAsync() {
     await Promise.all([
+
       Asset.loadAsync([
-        require('./assets/images/robot-dev.png'),
-        require('./assets/images/robot-prod.png'),
+        require('./assets/images/icon.png'),
       ]),
+
       Font.loadAsync({
         // This is the font that we are using for our tab bar
+        Roboto: require('native-base/Fonts/Roboto.ttf'),
+        Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
         ...Ionicons.font,
-        // We include SpaceMono because we use it in HomeScreen.js. Feel free to
-        // remove this if you are not using it in your app
-        'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
       }),
     ]);
   }
@@ -77,7 +79,6 @@ class App extends React.Component{
     }
   }
 }
-
 
 //EXPORT
 export default App;
