@@ -45,13 +45,19 @@ export default class TeamScreen extends React.Component {
         <View style={styles.titleView}>
           <Text style={styles.titleText}>Femmes</Text>
         </View>
-        <Match>
-        </Match>
+        <Match id1 = {1}
+              id2 = {2}
+              score1 = {18}
+              score2 = {12}
+        />
         <View style={styles.titleView}>
           <Text style={styles.titleText}>Hommes</Text>
         </View>
-        <Match>
-        </Match>
+        <Match id1 = {1}
+              id2 = {2}
+              score1 = {18}
+              score2 = {12}
+        />
       </ScrollView>
 
     );
