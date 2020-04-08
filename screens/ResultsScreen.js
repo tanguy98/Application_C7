@@ -30,7 +30,7 @@ const list = [
 
 //COMPONENT :
 
-class TeamScreen extends React.Component {
+class ResultsScreen extends React.Component {
 
   constructor(props) {
         super(props);

@@ -42,7 +42,7 @@ class TeamScreen extends React.Component {
   render() {
     return (
       <View>
-        <CustomHeader title="Program" isHome={true} navigation={this.props.navigation} />
+        <CustomHeader title="Team" isHome={false} navigation={this.props.navigation} />
         <ScrollView>
           <View style={styles.titleView}>
             <Text style={styles.titleText}>Femmes</Text>
@@ -77,7 +77,7 @@ class TeamScreen extends React.Component {
         </ScrollView>
       </View>
     );
-  },
+  }
 
   _maybeRenderDevelopmentModeWarning() {
     if (__DEV__) {
@@ -85,9 +85,9 @@ class TeamScreen extends React.Component {
         <Text onPress={this._handleLearnMorePress} style={styles.helpLinkText}>
           Learn more
         </Text>
-    );
+      );
+    }
   }
-}
 }
 
 
