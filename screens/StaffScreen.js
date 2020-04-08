@@ -1,4 +1,3 @@
-// IPMORTS
 import React from 'react';
 import {
   Image,
@@ -10,27 +9,24 @@ import {
   View,
 } from 'react-native';
 import { WebBrowser } from 'expo';
-import { ListItem } from 'react-native-elements';
-import CustomHeader from '../components/CustomHeader';
+import { ListItem } from 'react-native-elements'
 
 
 
-
-// CONSTANTS :
+import { MonoText } from '../components/StyledText';
 
 const list = [
   {
-    title: 'Equipe 1',
+    title: 'Staffeur 1',
     icon: 'add-circle-outline'
   },
   {
-    title: 'Equipe 2',
+    title: 'Staffeur 2',
     icon: 'add-circle-outline'
   },
 ]
 
-// COMPONENT :
-class TeamScreen extends React.Component {
+export default class StaffScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
@@ -41,43 +37,27 @@ class TeamScreen extends React.Component {
 
   render() {
     return (
-      <View>
-        <CustomHeader title="Program" isHome={true} navigation={this.props.navigation} />
-        <ScrollView>
-          <View style={styles.titleView}>
-            <Text style={styles.titleText}>Femmes</Text>
-          </View>
-          {
-            list.map((item, i) => (
-              <ListItem
-                key={i}
-                title={item.title}
-                leftIcon={{ name: item.icon }}
-                bottomDivider
-                chevron
-                onPress={() => this.props.navigation.navigate("PdfScreen")}
-              />
-            ))
-          }
-          <View style={styles.titleView}>
-            <Text style={styles.titleText}>Hommes</Text>
-          </View>
-          {
-            list.map((item, i) => (
-              <ListItem
-                key={i}
-                title={item.title}
-                leftIcon={{ name: item.icon }}
-                bottomDivider
-                chevron
-                onPress={() => this.props.navigation.navigate("PdfScreen")}
-              />
-            ))
-          }
-        </ScrollView>
+      <ScrollView>
+      <View style={styles.titleView}>
+        <Text style={styles.titleText}>Staffeurs</Text>
       </View>
+        {
+          list.map((item, i) => (
+            <ListItem
+              key={i}
+              title={item.title}
+              leftIcon={{ name: item.icon }}
+              bottomDivider
+              chevron
+              onPress={() => this.props.navigation.navigate("PdfScreen")}
+            />
+          ))
+        }
+
+      </ScrollView>
+
     );
-  },
+  }
 
   _maybeRenderDevelopmentModeWarning() {
     if (__DEV__) {
@@ -85,11 +65,33 @@ class TeamScreen extends React.Component {
         <Text onPress={this._handleLearnMorePress} style={styles.helpLinkText}>
           Learn more
         </Text>
-    );
-  }
-}
-}
+      );
 
+      return (
+        <Text style={styles.developmentModeText}>
+          Development mode is enabled, your app will be slower but you can use useful development
+          tools. {learnMoreButton}
+        </Text>
+      );
+    } else {
+      return (
+        <Text style={styles.developmentModeText}>
+          You are not in development mode, your app will run at full speed.
+        </Text>
+      );
+    }
+  }
+
+  _handleLearnMorePress = () => {
+    WebBrowser.openBrowserAsync('https://docs.expo.io/versions/latest/guides/development-mode');
+  };
+
+  _handleHelpPress = () => {
+    WebBrowser.openBrowserAsync(
+      'https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes'
+    );
+  };
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -192,6 +194,3 @@ const styles = StyleSheet.create({
     color:'white'
   }
 });
-
-// EXPORT :
-export default TeamScreen;
