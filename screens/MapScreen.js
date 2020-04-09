@@ -9,13 +9,16 @@ class PlanScreen extends React.Component {
 
   render() {
     return (
-      <View>
-        <CustomHeader title="Map" isHome={true} navigation={this.props.navigation} />
-        <Text>
+      <View style={{flex:1}}>
+        <View style={{flex:1}}>
+          <CustomHeader title="Map" isHome={true} navigation={this.props.navigation} />
+        </View>
+        <View style={{flex:6}}>
+          <Text>
             This tab will present a map for the palyers, public and staff to find their way.
-          </Text>
-      </View>
-          
+          </Text> 
+        </View>
+        </View>               
     );
   }
 

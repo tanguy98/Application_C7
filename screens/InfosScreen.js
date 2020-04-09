@@ -10,10 +10,14 @@ class InfosScreen extends React.Component {
   render() {
     return (
       <View style={{flex:1}}>
-        <CustomHeader title="Infos" isHome={true} navigation={this.props.navigation} />
-          <Text>
+        <View style={{flex:1}}>
+          <CustomHeader title="Infos" isHome={true} navigation={this.props.navigation} />
+      </View>
+      <View style={{flex:6}}>
+        <Text>
             This page will display the most recent posts and informations from the Centrale 7's
-          </Text>      
+        </Text> 
+      </View>     
     </View>
     )
   }

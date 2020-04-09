@@ -1,20 +1,9 @@
 // IPMORTS
 import React from 'react';
-import {
-  Image,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-import { WebBrowser } from 'expo';
+import { Platform, ScrollView, StyleSheet, Text, View} from 'react-native';
 import { ListItem } from 'react-native-elements';
+
 import CustomHeader from '../components/CustomHeader';
-
-
-
 
 // CONSTANTS :
 
@@ -30,19 +19,14 @@ const list = [
 ]
 
 // COMPONENT :
-class TeamScreen extends React.Component {
-  static navigationOptions = {
-    header: null,
-  };
 
-  constructor(props) {
-        super(props);
-    }
+class TeamScreen extends React.Component {
+
 
   render() {
     return (
-      <View>
-        <CustomHeader title="Team" isHome={false} navigation={this.props.navigation} />
+      <View style={{flex:1}}>
+        <CustomHeader title="Teams" isHome={true} navigation={this.props.navigation} />
         <ScrollView>
           <View style={styles.titleView}>
             <Text style={styles.titleText}>Femmes</Text>
@@ -79,15 +63,6 @@ class TeamScreen extends React.Component {
     );
   }
 
-  _maybeRenderDevelopmentModeWarning() {
-    if (__DEV__) {
-      const learnMoreButton = (
-        <Text onPress={this._handleLearnMorePress} style={styles.helpLinkText}>
-          Learn more
-        </Text>
-      );
-    }
-  }
 }
 
 

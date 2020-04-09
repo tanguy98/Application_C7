@@ -8,8 +8,14 @@ const screens = {
   TeamHome: TeamScreen,
 }
 
-
 // TeamStack
-const TeamStack = createStackNavigator(screens);
+
+const TeamStack = createStackNavigator(
+  screens, 
+  { defaultNavigationOptions: {
+    header: null,
+  }
+  }
+);
 
 export default TeamStack;
