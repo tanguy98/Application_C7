@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View, Image, Animated, Dimensions} from 'react-native'
-import { MatchData } from "./MatchData.js"
-import { EquipeData } from "./EquipeData.js"
+import { MatchData } from "../assets/data/MatchData.js"
+import { Equipe } from "../assets/data/EquipeData.js"
 //Rajouter les liaisons avec la base de donnée
 
 const {width} = Dimensions.get('window')
@@ -11,14 +11,14 @@ export default class Match extends React.Component {
   imageEquipe(id){
         switch (id){
             case 1:
-                return(require('./logo1.png'))
+                return(require('../assets/images/logo1.png'))
                 break;
             case 2:
-            return(require('./logo2.jpg'))
+            return(require('../assets/images/logo2.jpg'))
             break;
 
             default:
-            return(require('./logo2.jpg'))
+            return(require('../assets/images/logo2.jpg'))
 
         }
     }

@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { WebBrowser } from 'expo';
 import { ListItem } from 'react-native-elements'
-import Match from './Match';
+import Match from '../components/Match';
 import CustomHeader from '../components/CustomHeader';
 import { MonoText } from '../components/StyledText';
 

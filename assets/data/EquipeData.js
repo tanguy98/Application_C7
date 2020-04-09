@@ -2,11 +2,11 @@ export default EquipeData = [
    {
      idEquipe : 1,
      nomEquipe : "Stade Toulousain",
-     logoEquipe : "./Stade-Toulousain-logo.jpg"
+     logoEquipe : './assets/images/logo2.png'
    },
    {
      idEquipe : 2,
      nomEquipe : "Stade Montois",
-     logoEquipe : "./Stade-Toulousain-logo.jpg"
+     logoEquipe : './assets/images/logo1.png'
    }
 ]
