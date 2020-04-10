@@ -7,7 +7,7 @@ import MapScreen from '../../screens/MapScreen';
 
 // PlanStack
 const screens = {
-    Plan: MapScreen,
+    Map: MapScreen,
   };
 
   const MapStack =  createStackNavigator(

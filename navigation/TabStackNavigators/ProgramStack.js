@@ -38,23 +38,3 @@ const ProgramStack = createStackNavigator(
 //EXPORTS :
 
 export default ProgramStack;
-
-
-/* const ProgramStack = createStackNavigator(
-  
-  screens, 
-  {
-    defaultNavigationOptions: {
-      title: 'Centrale 7',
-      headerStyle: {
-        backgroundColor: '#006c00',
-        height:60
-      },
-      headerTintColor: '#ffffff',
-      /*headerLeft: () => {return(
-        <Ionicons style={{ paddingLeft: 10 }} onPress={() => navigation.openDrawer()} name={Platform.OS === 'ios' ? 'ios-menu' : 'md-menu'} size={30} />
-      )} #fin commentaire
-    }
-  }
-);
-*/

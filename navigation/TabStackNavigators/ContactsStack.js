@@ -6,7 +6,7 @@ import BarreMenu from '../../components/BarreMenu';
 // Constants :
 
 const screens = {
-  Infos: ContactsScreen,
+  Contacts: ContactsScreen,
 };
 
 

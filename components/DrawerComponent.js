@@ -19,7 +19,7 @@ class DrawerComponent extends React.Component {
 
         return (
             <View style={{flex:1}}>
-                <View style={{backgroundColor: "#549E5E", height: Constants.statusBarHeight}} />
+
                 <View style={{height:65,backgroundColor:'#549e5e', justifyContent:'flex-end', alignItems:'center'}}>
                     <Image source={centrale7} style={{height:50,width:200,resizeMode: 'contain',marginBottom:10,tintColor: 'white'}}/>
                 </View>
