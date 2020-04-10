@@ -5,13 +5,12 @@ import 'react-native-gesture-handler'; // nothing above this import
 import { AppLoading } from 'expo';
 import { Asset } from 'expo-asset';
 import * as Font from 'expo-font';
-import React, { useState, useEffect } from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import React from 'react';
+import {StyleSheet} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import SplashScreen from 'react-native-splash-screen';
 
 import AppNavigator from './navigation/AppNavigator';
-
 
 // COMPONENT
 class App extends React.Component{
@@ -42,6 +41,7 @@ class App extends React.Component{
 
       Asset.loadAsync([
         require('./assets/images/icon.png'),
+        require('./assets/images/centrale-7.png'),
       ]),
 
       Font.loadAsync({

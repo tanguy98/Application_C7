@@ -11,7 +11,7 @@ class ContactsScreen extends React.Component {
 
   render () {
     return(
-      <View>
+      <View style={{flex:1}}>
         <CustomHeader title="Contacts" isHome={true} navigation={this.props.navigation} />
         <Text>Useful Contacts : buses, urgency,...</Text>
       </View>

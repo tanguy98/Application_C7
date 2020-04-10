@@ -1,7 +1,7 @@
 //IMPORTS
 import React from 'react';
 import {  createBottomTabNavigator, createAppContainer, createDrawerNavigator, createSwitchNavigator, createStackNavigator } from 'react-navigation';
-import {TabBarIcon, Ionicons} from '@expo/vector-icons/Ionicons';
+import { AntDesign,FontAwesome ,Entypo } from '@expo/vector-icons';
 import { Platform } from 'react-native';
 
 import {Text, Dimensions } from 'react-native'
@@ -9,6 +9,7 @@ import IconEntypo from 'react-native-vector-icons/Entypo';
 
 // Custom Components :
 import DrawerComponent from '../components/DrawerComponent';
+import BarreMenu from '../components/BarreMenu';
 
 // On importe tous les stacks navigators : 1 par onglet
 import ContactsStack from './TabStackNavigators/ContactsStack';
@@ -17,118 +18,122 @@ import MapStack from './TabStackNavigators/MapStack';
 import ProgramStack from './TabStackNavigators/ProgramStack';
 import ResultsStack from './TabStackNavigators/ResultsStack';
 import TeamStack from './TabStackNavigators/TeamStack';
+import StaffStack from './TabStackNavigators/StaffStack';
 
 // NAVIGATION :
 
 // Bottom Tab Navigator (qui regroupe les onglets les plus utilisés - surtout ceux adressés au public)
 
-const BottomTabNavigator = createBottomTabNavigator({
+const BottomTabNavigator = createBottomTabNavigator(
+  {
+    Infos: {
+      screen: InfosStack,
+      navigationOptions: {
+        tabBarLabel: 'Latest',
+        tabBarIcon: ({ focused, color, size, tintColor}) => {return(
+          <FontAwesome
+            name="info-circle"
+            size={30}
+            color={tintColor} />
+        )},
+      },
+    },
+    
+    Program: {
+      screen: ProgramStack,
+      navigationOptions: {
+        tabBarLabel: 'Programme',
+        tabBarIcon: ({ focused, color, size, tintColor}) => {return(
+          <FontAwesome name="calendar" size={30} color={tintColor} />
+        )},
+      }
+    },
 
-  Infos: {
-    screen: InfosStack,
-    navigationOptions: {
-      tabBarLabel: 'Latest',
-      tabBarIcon: ({ focused, color, size, tintColor}) => {return(
-        <IconEntypo
-          name="home"
-          size={30}
-          color={tintColor} />
-      )},
+    Results: {
+      screen: ResultsStack,
+      navigationOptions: {
+        tabBarLabel: 'Results',
+        tabBarIcon: ({tintColor}) => {return(
+          <FontAwesome name="trophy" size={30} color={tintColor} />
+        )},
+      },
+    },
+
+    Map: {
+      screen: MapStack,
+      navigationOptions: {
+        tabBarLabel: 'Map',
+        tabBarIcon: ({tintColor}) => {return(
+          <FontAwesome name="map" size={30} color={tintColor} />
+        )},
+      },
     },
   },
-  
-  Program: {
-    screen: ProgramStack,
-    navigationOptions: {
-      tabBarLabel: 'Programme',
-      tabBarIcon: ({ focused, color, size, tintColor}) => {return(
-        <IconEntypo name="calendar" size={30} color={tintColor} />
-      )},
-    }
-  },
+  {
+    tabBarOptions: { activeTintColor:'#549E5E'}
+  }
+);
 
-  Results: {
-    screen: ResultsStack,
-    navigationOptions: {
-      tabBarLabel: 'Results',
-      tabBarIcon: ({ focused, color, size, tintColor}) => {return(
-        <IconEntypo name="trophy" size={30} color={tintColor} />
-      )},
-    },
-  },
-
-  Map: {
-    screen: MapStack,
-    navigationOptions: {
-      tabBarLabel: 'Map',
-      tabBarIcon: ({ focused, color, size, tintColor}) => {return(
-        <IconEntypo name="map" size={30} color={tintColor} />
-      )},
-    },
-  },
-/*
-  More: {
-    screen: ()=> <Text> MORE INCOMING !</Text>,
+  {/*More: {
+    screen: ()=> {}},
     navigationOptions: {
       tabBarLabel: 'More',
       tabBarIcon: ({ focused, color, size, tintColor}) => {return(
         <IconEntypo name="dots-three-horizontal" size={30} color={tintColor} />
       )},
     }
-  },*/
-}
-);
+  },*/}
 
 
 // Mise ne place du Drawer Navigator
 
-const MainStack = createStackNavigator(
-  {
+const screens = {
     Home : {
       screen: BottomTabNavigator,
+      navigationOptions:{
+        drawerLabel: ({backgroundColor, tintColor})=>(
+          <BarreMenu color={tintColor} backgroundColor={backgroundColor} title={'Home'} iconName={'home'} type="AntDesign"/>
+        )
+      },
     },
     Teams : {
       screen: TeamStack,
+      navigationOptions:{
+        drawerLabel: ({backgroundColor, tintColor})=>(
+          <BarreMenu color={tintColor} backgroundColor={backgroundColor} title={'Teams'} iconName={'team'} type="AntDesign"/>
+        )
+      },
     },
     Contacts: {
       screen: ContactsStack,
-    }
-  },
-  {
-    defaultNavigationOptions: {
-      header: null,
+      navigationOptions:{
+        drawerLabel: ({backgroundColor, tintColor})=>(
+          <BarreMenu color={tintColor} backgroundColor={backgroundColor}  title={'Contacts'} iconName={'phone'} type="AntDesign"/>
+        )
+      },
     },
-    initialRouteName: 'Home'
-  }
-);
+    Staff :{
+      screen: StaffStack,
+      navigationOptions:{
+        drawerLabel: ({backgroundColor, tintColor})=>(
+          <BarreMenu color={tintColor} backgroundColor={backgroundColor} title={'Staff'} iconName={'idcard'} type="AntDesign" />
+        )
+      }
+    },
+  };
 
 const DrawerNavigator = createDrawerNavigator(
-  {drawer: MainStack},
+  screens,
   {
-    contentComponent: ({ navigation }) => <DrawerComponent navigation={navigation} />,
-    drawerWidth: Dimensions.get('window').width*3/4
+    contentComponent: DrawerComponent,
+    drawerWidth: Dimensions.get('window').width*3/4,
+    contentOptions:{
+      activeTintColor:'#549e5e',
+      activeBackgroundColor:'#ececec'
+    }
   }
 
 )
-
-
-
-// Drawer navigator : 19'15''
-// https://www.youtube.com/watch?v=0VfzgFZt-AI&t=982s
-
-/*
-// DrawerNavigator (contient tous les onglets qui ne sont pas dans la barre d'onglets du bas)
-const DrawerNavigator = createDrawerNavigator({
-  Team: TeamStack,
-  Contacts: ContactsStack
-});
-
-// MainDrawer (Contient la barre d'onglet et le drawer des onglets aditionnels)
-const MainDrawerNavigator = createDrawerNavigator({
-  BottomTabNavigator: BottomTabNavigator,
-  DrawerNavigator: DrawerNavigator
-});
-*/
 
 // EXPORT :
 export default createAppContainer(

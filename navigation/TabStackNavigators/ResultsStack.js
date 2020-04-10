@@ -1,8 +1,5 @@
 // IMPORTS :
-import React from 'react';
-import { Platform } from 'react-native';
 import { createStackNavigator} from 'react-navigation';
-import TabBarIcon from '@expo/vector-icons/Ionicons';
 
 import ResultsScreen from '../../screens/ResultsScreen';
 

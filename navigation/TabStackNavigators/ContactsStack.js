@@ -1,21 +1,24 @@
-import React from 'react';
-import { Platform } from 'react-native';
+// IMPORTS
 import { createStackNavigator} from 'react-navigation';
-import Icon from '@expo/vector-icons/Ionicons';
 
 import ContactsScreen from '../../screens/ContactsScreen';
-
+import BarreMenu from '../../components/BarreMenu';
 // Constants :
 
 const screens = {
   Infos: ContactsScreen,
-}
+};
 
 
 // ContactsStack
 const ContactsStack = createStackNavigator(
   screens, 
-  { defaultNavigationOptions: { header: null }
+  { defaultNavigationOptions: {
+    header: null,
+    drawerLabel : ({tintColor})=>(
+      <BarreMenu couleur={tintColor} titre={'Classement'} logo={'ios-podium'}/>
+    )
+  }
   }
 );
 

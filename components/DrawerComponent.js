@@ -4,35 +4,39 @@ import React from 'react';
 import {SafeAreaView, ScrollView, View, Text, Image} from 'react-native';
 import { List, ListItem } from 'native-base';
 import IconEntypo from 'react-native-vector-icons/Entypo';
-import iconC7 from '../assets/images/icon.png';
+import centrale7 from '../assets/images/centrale-7.png';
+import Constants from 'expo-constants';
+
+import {DrawerItems} from 'react-navigation-drawer';
+
 
 //COMPONENTS :
 
 class DrawerComponent extends React.Component {
 
-  render() {
+    render() {
 
-    return (
-        <SafeAreaView style={{flex: 1}}>
-            <View style={{height:150, alignItems:'center', justifyContent: 'center'}}>
-                <Image source={iconC7} style={{height:120, width:120, borderRadius:60}} />
+
+        return (
+            <View style={{flex:1}}>
+                <View style={{backgroundColor: "#549E5E", height: Constants.statusBarHeight}} />
+                <View style={{height:65,backgroundColor:'#549e5e', justifyContent:'flex-end', alignItems:'center'}}>
+                    <Image source={centrale7} style={{height:50,width:200,resizeMode: 'contain',marginBottom:10,tintColor: 'white'}}/>
+                </View>
+                <ScrollView>
+                    <SafeAreaView style={{flex:1}} forceInset={{ top: 'always', horizontal: 'never' }}>
+                        <DrawerItems {...this.props} />
+                    </SafeAreaView>
+                </ScrollView>
+                <View style={{ justifyContent:'flex-end', alignItems:'center', marginBottom:10}}>
+                    <Text style={{color:'#cdcdcd',}}>
+                        © Pôle Info - Centrale7
+                    </Text>
+                </View>
             </View>
-            <ScrollView>
-                <List>
-                    <ListItem onPress={()=>this.props.navigation.navigate('Contacts')}>
-                        <IconEntypo name="old-phone" size={30} />
-                        <Text>Contacts</Text>
-                    </ListItem>
-                    <ListItem onPress={()=>this.props.navigation.navigate('Teams')}>
-                        <IconEntypo name="slideshare" size={30} />
-                        <Text>Teams</Text>
-                    </ListItem>
 
-                </List>
-            </ScrollView>
-        </SafeAreaView>
-    );
-  }
+        );
+    }
 }
 
 export default DrawerComponent;
