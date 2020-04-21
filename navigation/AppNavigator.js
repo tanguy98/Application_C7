@@ -19,6 +19,8 @@ import ProgramStack from './TabStackNavigators/ProgramStack';
 import ResultsStack from './TabStackNavigators/ResultsStack';
 import TeamStack from './TabStackNavigators/TeamStack';
 import StaffStack from './TabStackNavigators/StaffStack';
+import TestStack from './TabStackNavigators/TestStack';
+
 
 // NAVIGATION :
 
@@ -38,7 +40,7 @@ const BottomTabNavigator = createBottomTabNavigator(
         )},
       },
     },
-    
+
     Program: {
       screen: ProgramStack,
       navigationOptions: {
@@ -117,6 +119,14 @@ const screens = {
       navigationOptions:{
         drawerLabel: ({backgroundColor, tintColor})=>(
           <BarreMenu color={tintColor} backgroundColor={backgroundColor} title={'Staff'} iconName={'idcard'} type="AntDesign" />
+        )
+      }
+    },
+    Test :{
+      screen: TestStack,
+      navigationOptions:{
+        drawerLabel: ({backgroundColor, tintColor})=>(
+          <BarreMenu color={tintColor} backgroundColor={backgroundColor} title={'Test'} iconName={'idcard'} type="AntDesign" />
         )
       }
     },

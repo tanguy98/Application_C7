@@ -58,11 +58,11 @@ class App extends React.Component{
     // service, for example Sentry
     console.warn(error);
   }
-  
+
   handleFinishLoading() {
     this.setState({isLoadingComplete: true});
   }
-  
+
   render() {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
       return (
