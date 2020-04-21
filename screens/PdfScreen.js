@@ -9,8 +9,7 @@ export default class PdfScreen extends React.Component {
 
   render () {
     return(
-      <WebView source={{uri: 'https://drive.google.com/file/d/1XYgcKsoA5POTLL91uOzy_bJPt8H0Wwfp/view?usp=sharing'}} >
-      </WebView>
+      <WebView source={{uri: 'https://drive.google.com/file/d/1XYgcKsoA5POTLL91uOzy_bJPt8H0Wwfp/view?usp=sharing'}} />
     )
   }
 }

@@ -1,10 +1,10 @@
 {
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 11428,
+  "packagerPid": 16448,
   "expoServerNgrokUrl": "https://e3-sxi.tanguyhtte.application-c7.exp.direct",
   "packagerNgrokUrl": "https://packager.e3-sxi.tanguyhtte.application-c7.exp.direct",
-  "ngrokPid": 22488,
+  "ngrokPid": 23876,
   "devToolsPort": 19002,
   "webpackServerPort": null
 }
