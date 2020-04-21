@@ -13,7 +13,7 @@ class InfosScreen extends React.Component {
         <View style={{flex:1}}>
           <CustomHeader title="Infos" isHome={true} navigation={this.props.navigation} />
       </View>
-      <View style={{flex:6}}>
+      <View style={{flex:10}}>
         <Text>
             This page will display the most recent posts and informations from the Centrale 7's
         </Text> 

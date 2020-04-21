@@ -237,7 +237,6 @@ var mapStyle=[
     ]
   }
 ]
-
 var mapStyle2=[
   {
     "elementType": "geometry",
@@ -525,312 +524,34 @@ var mapStyle3=[
     ]
   }
 ]
-var listeSports=[
-  {
-    type:'Sport',
-    nom:'Badminton',
-    lieu:['Campus Orsay Bâtiment 310'],
-    campus:'Orsay',
-    description:'Campus Orsay Bâtiment 310',
-    imageName:'badminton',
-    id:6,
-    region:[{latitude:48.700783, longitude:2.176774,latitudeDelta:0.004,longitudeDelta:0.004}]
-
-  },
-
-  {
-    type:'Sport',
-    nom:'Basket M',
-    lieu:['Campus X'],
-    campus:'X',
-    description:'Campus X',
-    imageName:'basketball',
-    id:4,
-    region:[{latitude: 48.711679, longitude:2.212807,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-  },
-  {
-    type:'Sport',
-    nom:'Basket M (finale)',
-    lieu:['Bouygues'],
-    campus:'CS',
-    description:'Bouygues',
-    imageName:'basketball',
-    id:23,
-    region:[{latitude:48.709303, longitude: 2.166508,latitudeDelta:0.004,longitudeDelta:0.004}]
-
-  },
-  {
-    type:'Sport',
-    nom:'Basket F',
-    lieu:['Campus Orsay Bâtiment 225'],
-    campus:'Orsay',
-    description:'Campus Orsay Bâtiment 225',
-    imageName:'basketball',
-    id:11,
-    region:[{latitude: 48.698671, longitude: 2.165720,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-  },
-  {
-    type:'Sport',
-    nom:'Basket F (finale)',
-    lieu:['Bouygues'],
-    campus:'CS',
-    description:'Bouygues',
-    imageName:'basketball',
-    id:22,
-    region:[{latitude:48.709303, longitude: 2.166508,latitudeDelta:0.004,longitudeDelta:0.004}]
-
-  },
-  {
-    type:'Sport',
-    nom:'Cheerleading',
-    lieu:['Bouygues'],
-    campus:'CS',
-    description:'Bouygues',
-    imageName:'cheer',
-    id:16,
-    region:[{latitude:48.709303, longitude: 2.166508,latitudeDelta:0.004,longitudeDelta:0.004}]
-
-  }, 
-  
-  {
-    type:'Sport',
-    nom:'Escalade',
-    lieu:['Campus X'],
-    campus:'X',
-    description:'Campus X',
-    imageName:'escalade',
-    id:18,
-    region:[{latitude:48.711765,longitude:2.214790,latitudeDelta:0.004,longitudeDelta:0.004}]
-
-  },
-  {
-    type:'Sport',
-    nom:'Escrime',
-    lieu:['Campus X'],
-    campus:'X',
-    description:'Campus X',
-    imageName:'escrime',
-    id:189,
-    region:[{latitude:48.712187,longitude: 2.213519,latitudeDelta:0.004,longitudeDelta:0.004}]
-
-  },
-  {
-    type:'Sport',
-    nom:'Equitation',
-    lieu:['Grange Martin'],
-    campus:'CS',
-    description:'Grange Martin',
-    imageName:'equitation',
-    id:17,
-    region:[{latitude:48.704850,longitude: 2.116090,latitudeDelta:0.004,longitudeDelta:0.004}]
-
-  },
-  {
-  type:'Sport',
-  nom:'Foot M',
-  lieu:['Village TOSS','Plaine des sports'],
-  campus:'CS',
-  description:'Village TOSS & Plaine des sports',
-  imageName:'football',
-  id:3,
-  region:[{latitude:48.708373,longitude:2.157297,latitudeDelta:0.005,longitudeDelta:0.005}, {latitude:48.710517,longitude:2.157438,latitudeDelta:0.005,longitudeDelta:0.005}]
-},
-{
-  type:'Sport',
-  nom:'Foot F',
-  lieu:['Plaine des sports'],
-  campus:'CS',
-  description:'Plaine des sports',
-  imageName:'football',
-  id:10,
-  region:[{latitude:48.710517,longitude:2.157438,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-},
-{
-  type:'Sport',
-  nom:'Hand M',
-  lieu:['Bréguet','Bouygues'],
-  campus:'CS',
-  description:'Bréguet & Bouygues',
-  imageName:'handball',
-  id:13,
-  region:[{latitude:48.709376,longitude:  2.164186,latitudeDelta:0.004,longitudeDelta:0.004},{latitude:48.709303, longitude: 2.166508,latitudeDelta:0.004,longitudeDelta:0.004}]
-
-},
-{
-  type:'Sport',
-  nom:'Hand F',
-  lieu:['Campus Orsay Bâtiment 225'],
-  campus:'Orsay',
-  description:'Campus Orsay Bâtiment 225',
-  imageName:'handball',
-  id:7,
-  region:[{latitude:48.698671,longitude: 2.165720,latitudeDelta:0.004,longitudeDelta:0.004}]
-
-},
-{
-  type:'Sport',
-  nom:'Hand F (finale)',
-  lieu:['Bréguet'],
-  campus:'CS',
-  description:'Bréguet',
-  imageName:'handball',
-  id:21,
-  region:[{latitude:48.709376,longitude:  2.164186,latitudeDelta:0.004,longitudeDelta:0.004}]
-
-},
-{
-  type:'Sport',
-  nom:'Judo',
-  lieu:['Bouygues'],
-  campus:'CS',
-  description:'Bouygues',
-  imageName:'judo',
-  id:15,
-  region:[{latitude:48.709303, longitude: 2.166508,latitudeDelta:0.004,longitudeDelta:0.004}]
-
-},
-{
-  type:'Sport',
-  nom:'Natation',
-  lieu:['Campus X'],
-  campus:'X',
-  description:'Campus X',
-  imageName:'natation',
-  id:19,
-  region:[{latitude:48.712425,longitude: 2.211640,latitudeDelta:0.004,longitudeDelta:0.004}]
-
-},
-{
-  type:'Sport',
-  nom:'Neymar Junior 5',
-  lieu:['Village TOSS'],
-  campus:'CS',
-  description:'Village TOSS',
-  imageName:'neymarjr5',
-  id:24,
-  region:[{latitude:48.707873, longitude: 2.158478,latitudeDelta:0.004,longitudeDelta:0.004}]
-
-},
-{
-  type:'Sport',
-  nom:'Rugby M',
-  lieu:['Campus X','Plaine des sports'],
-  campus:'X',
-  description:'Campus X et Plaine des sports',
-  imageName:'rugby',
-  id:12,
-  region:[{latitude:48.717268,longitude:2.208469,latitudeDelta:0.005,longitudeDelta:0.005},{latitude:48.713935, longitude:2.154079,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-},
-{
-  type:'Sport',
-  nom:'Rugby F',
-  lieu:['Plaine des sports'],
-  campus:'CS',
-  description:'Plaine des sports',
-  imageName:'rugby',
-  id:5,
-  region:[{latitude:48.713935, longitude:2.154079,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-},
-{
-  type:'Sport',
-  nom:'Tennis',
-  lieu:['Village TOSS'],
-  campus:'CS',
-  description:'Village TOSS',
-  imageName:'tennis',
-  id:1,
-  region:[{latitude:48.709062,longitude:2.158220,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-},
-{
-  type:'Sport',
-  nom:'Tennis de table',
-  lieu:['Bouygues salle polyvalente'],
-  campus:'CS',
-  description:'Bouygues',
-  imageName:'ping-pong',
-  id:159,
-  region:[{latitude:48.709303, longitude: 2.166508,latitudeDelta:0.004,longitudeDelta:0.004}]
-
-},
-{
-  type:'Sport',
-  nom:'Ultimate',
-  lieu:['Campus X'],
-  campus:'X',
-  description:'Campus X',
-  imageName:'ultimate',
-  id:14,
-  region:[{latitude:48.715200,longitude:2.214361,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-},
-{
-  type:'Sport',
-  nom:'Volley M',
-  lieu:['Campus X'],
-  campus:'X',
-  description:'Campus X',
-  imageName:'volleyball',
-  id:9,
-  region:[{latitude:48.712176,longitude:2.213990,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-},
-{
-  type:'Sport',
-  nom:'Volley F',
-  lieu:['Village TOSS'],
-  campus:'CS',
-  description:'Village TOSS',
-  imageName:'volleyball',
-  id:2,
-  region:[{latitude:48.708845,longitude:2.158710,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-},
-  {
-    type:'Sport',
-    nom:'10 km Mazars',
-    lieu:['Village TOSS'],
-    campus:'CS',
-    description:'Village TOSS',
-    imageName:'10km',
-    id:8,
-    region:[{latitude:48.707125,longitude:2.158160,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-  },
-  {
-    type:'Sport',
-    nom:'Waterpolo',
-    lieu:['Campus X'],
-    campus:'X',
-    description:'Campus X',
-    imageName:'waterpolo',
-    id:20,
-    region:[{latitude:48.712425,longitude: 2.211640,latitudeDelta:0.004,longitudeDelta:0.004}]
-  }
-]
-
 
 var listeServices=[
   {
     type:'Service',
-    nom:'Accueil',
-    lieu:['Bouygues'],
-    description:'Bouygues',
+    nom:'Team Room',
+    lieu:['Agora'],
+    description:'Reception',
     campus:'CS',
     imageName:'accueil',
     id:3,
     region:[{latitude:48.709528, longitude:2.166622,latitudeDelta:0.005,longitudeDelta:0.005}]
 
   },
+
+  {
+    type:'Service',
+    nom:'University restaurant',
+    lieu:['Eiffel'],
+    description:'Campus CS',
+    campus:'CS',
+    imageName:'douche',
+    id:6,
+    region:[{latitude:48.708992,longitude: 2.158008,latitudeDelta:0.005,longitudeDelta:0.005},{latitude:48.708397,longitude: 2.163993,latitudeDelta:0.005,longitudeDelta:0.005},{latitude:48.708993,longitude: 2.166763,latitudeDelta:0.005,longitudeDelta:0.005}]
+  },
   
   {
     type:'Service',
-    nom:'Toilettes CS',
+    nom:'Toilets CS',
     lieu:['Résidence 1', 'Bréguet', ],
     description:'Campus CS',
     campus:'CS',
@@ -839,54 +560,12 @@ var listeServices=[
     region:[{latitude:48.707778,longitude: 2.160398,latitudeDelta:0.005,longitudeDelta:0.005},{latitude:48.708294,longitude:2.164983,latitudeDelta:0.005,longitudeDelta:0.005}]
 
   },
-  {
-    type:'Service',
-    nom:'Sanitaires',
-    lieu:['Village TOSS', 'Bréguet', 'Bouygues'],
-    description:'Campus CS',
-    campus:'CS',
-    imageName:'douche',
-    id:6,
-    region:[{latitude:48.708992,longitude: 2.158008,latitudeDelta:0.005,longitudeDelta:0.005},{latitude:48.708397,longitude: 2.163993,latitudeDelta:0.005,longitudeDelta:0.005},{latitude:48.708993,longitude: 2.166763,latitudeDelta:0.005,longitudeDelta:0.005}]
 
-  },
-  {
-    type:'Service',
-    nom:'Banque de jour',
-    lieu:['Village TOSS', 'Bréguet', 'Bouygues'],
-    description:'Rechargement des bracelets',
-    campus:'CS',
-    imageName:'pointchange',
-    id:7,
-    region:[{latitude:48.708049,longitude: 2.157664,latitudeDelta:0.005,longitudeDelta:0.005}]
 
-  },
   {
     type:'Service',
-    nom:'Secouristes CS',
-    lieu:['Village TOSS', 'Bouygues', 'Plaine des sports'],
-    description:'UMPS',
-    campus:'CS',
-    imageName:'secouriste',
-    id:8,
-    region:[{latitude:48.708706,longitude: 2.158652,latitudeDelta:0.005,longitudeDelta:0.005},{latitude:48.709577,longitude: 2.166121,latitudeDelta:0.005,longitudeDelta:0.005},{latitude:48.712301,longitude: 2.156357,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-  },
-  {
-    type:'Service',
-    nom:'Secouristes X',
-    lieu:['Campus X'],
-    description:'UMPS',
-    campus:'X',
-    imageName:'secouriste',
-    id:9,
-    region:[{latitude:48.717022,longitude: 2.210139,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-  },
-  {
-    type:'Service',
-    nom:'Départ navettes',
-    lieu:['Bréguet', 'Campus X', 'Bâtiment 225 Orsay', 'Bâtiment 310 Orsay'],
+    nom:'Shuttle buses',
+    lieu:['Bréguet', 'Bâtiment 225 Orsay', 'Bâtiment 310 Orsay'],
     description:'Pôle navette',
     campus:'CS',
     imageName:'navette',
@@ -896,75 +575,21 @@ var listeServices=[
   },
   {
     type:'Service',
-    nom:'Champs de tentes',
-    lieu:['N°1', 'N°2', 'N°3'],
-    description:'Hébergement en tente',
-    campus:'CS',
-    imageName:'tente',
-    id:11,
-    region:[{latitude:48.707986,longitude: 2.159977,latitudeDelta:0.005,longitudeDelta:0.005},{latitude:48.707315,longitude: 2.160646,latitudeDelta:0.005,longitudeDelta:0.005},{latitude:48.708312,longitude: 2.166717,latitudeDelta:0.004,longitudeDelta:0.004}]
-
-  },
-  {
-    type:'Service',
-    nom:'Buvette CS',
-    lieu:['Village TOSS'],
-    description:'Village TOSS',
+    nom:'',
+    lieu:[''],
+    description: '',
     campus:'CS',
     imageName:'buvette',
     id:12,
     region:[{latitude:48.707949,longitude: 2.157612,latitudeDelta:0.005,longitudeDelta:0.005}]
 
   },
-  {
-    type:'Service',
-    nom:'Buvette X',
-    lieu:['Campus X'],
-    description:'Campus X',
-    campus:'X',
-    imageName:'buvette',
-    id:13,
-    region:[{latitude:48.712554,longitude: 2.214495,latitudeDelta:0.005,longitudeDelta:0.005}]
 
-  },
-  {
-    type:'Activites',
-    nom:'Dîner du samedi soir',
-    lieu:['Bréguet'],
-    campus:'CS',
-    description:'Bréguet',
-    imageName:'diner',
-    id:231,
-    region:[{latitude:48.708220, longitude: 2.164092,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-  },
-  {
-    type:'Service',
-    nom:'Pizza Domino\'s',
-    lieu:['Agora'],
-    description:'Récupérez ici les pizzas obtenues au shotgun',
-    campus:'CS',
-    imageName:'pizza',
-    id:4,
-    region:[{latitude:48.710088, longitude:2.164637,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-  },
-  {
-    type:'Service',
-    nom:'Distribution des packs déjeuner',
-    lieu:['Village TOSS', 'Campus X'],
-    description:'Village TOSS & Campus X',
-    campus:'CS',
-    imageName:'dejeuner',
-    id:14,
-    region:[{latitude:48.708582,longitude: 2.158721,latitudeDelta:0.005,longitudeDelta:0.005},{latitude:48.712549,longitude: 2.214789,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-  },
   {
     type:'Service',
     nom:'Petit-Déjeuner',
-    lieu:['Bréguet'],
-    description:'Bréguet',
+    lieu:['Eiffel'],
+    description:'Eiffel',
     campus:'CS',
     imageName:'breakfast',
     id:15,
@@ -977,131 +602,22 @@ var listeServices=[
 ]
 
 var listeActivites=[
-  {
-    type:'Activites',
-    nom:'Biathlon',
-    lieu:['Village TOSS'],
-    campus:'CS',
-    description:'Village TOSS',
-    imageName:'biathlon',
-    id:7,
-    region:[{latitude:48.707574,longitude:2.161402,latitudeDelta:0.005,longitudeDelta:0.005}]
 
-  },
-  {
-    type:'Activites',
-    nom:'Bubble Foot',
-    lieu:['Village TOSS'],
-    campus:'CS',
-    description:'Village TOSS',
-    imageName:'bubble-foot',
-    id:13,
-    region:[{latitude:48.708036,longitude: 2.156373,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-  },
-  {
-    type:'Activites',
-    nom:'Cérémonie de clôture',
-    lieu:['Village TOSS'],
-    campus:'CS',
-    description:'Village TOSS',
-    imageName:'ceremoniecloture',
-    id:12,
-    region:[{latitude:48.707858,longitude:2.158142,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-  },
-  {
-    type:'Activites',
-    nom:'Feu d\'artifice',
-    lieu:['Village TOSS'],
-    campus:'CS',
-    description:'Village TOSS',
-    imageName:'feuartifice',
-    id:11,
-    region:[{latitude:48.707395, longitude:2.163571,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-  },
-  {
-    type:'Activites',
-    nom:'Laser game',
-    lieu:['Village TOSS'],
-    campus:'CS',
-    description:'Village TOSS',
-    imageName:'lasergame',
-    id:10,
-    region:[{latitude:48.707510,longitude:2.163498,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-  },
-  {
-    type:'Activites',
-    nom:'Montgolfière',
-    lieu:['Village TOSS'],
-    campus:'CS',
-    description:'Village TOSS',
-    imageName:'montgolfiere',
-    id:3,
-    region:[{latitude:48.709241,longitude:2.157627,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-  },
   {
     type:'Activites',
     nom:'Ostéopathes',
-    lieu:['Village TOSS'],
-    campus:'CS',
-    description:'Village TOSS',
+    lieu:['Orsay'],
+    campus:'Orsay',
+    description:'Tour de terrain',
     imageName:'osteopathes',
     id:4,
     region:[{latitude:48.708457,longitude:2.157429,latitudeDelta:0.005,longitudeDelta:0.005}]
 
   },
-  {
-    type:'Activites',
-    nom:'Soirée',
-    lieu:['Eiffel & Yvette'],
-    campus:'CS',
-    description:'Eiffel & Yvette',
-    imageName:'confetti',
-    id:14,
-    region:[{latitude:48.709882,longitude: 2.166493,latitudeDelta:0.005,longitudeDelta:0.005}]
 
-  },
-  {
-    type:'Activites',
-    nom:'Stand de tir',
-    lieu:['Village TOSS'],
-    campus:'CS',
-    description:'Village TOSS',
-    imageName:'standdetir',
-    id:8,
-    region:[{latitude:48.708470, longitude:2.157836,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-  },
-  {
-    type:'Activites',
-    nom:'Saut à l\'élastique',
-    lieu:['Village TOSS'],
-    campus:'CS',
-    description:'Village TOSS',
-    imageName:'sautelastique',
-    id:9,
-    region:[{latitude:48.707774,longitude:2.163246,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-  },
-  {
-    type:'Activites',
-    nom:'Tir à l\'arc',
-    lieu:['Village TOSS'],
-    campus:'CS',
-    description:'Village TOSS',
-    imageName:'tiralarc',
-    id:5,
-    region:[{latitude:48.706572, longitude:2.157100,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-  }  
 ]
 
 const campusGifRegion={latitude:48.709743,longitude:2.162944,latitudeDelta:0.012,longitudeDelta:0.012}
-const campusXRegion={latitude:48.712339,longitude:2.211394,latitudeDelta:0.012,longitudeDelta:0.012}
 const campusOrsayRegion={latitude:48.699260,longitude: 2.180779,latitudeDelta:0.012,longitudeDelta:0.012}
 
 const {width,height}=Dimensions.get('window')
@@ -1113,11 +629,10 @@ class MapScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state={
-      topPosition:new Animated.Value(height-450),
+      topPosition: new Animated.Value(height-450),
       recherche:'',
       listeMarkers:[],
       campus:'CS',
-      listeRechercheSports: listeSports,
       listeRechercheServices: listeServices,
       listeRechercheActivites: listeActivites,
       region: campusGifRegion
@@ -1125,7 +640,7 @@ class MapScreen extends React.Component {
   }
 
   componentDidMount() {
-    checkMultiPermissions();
+    //checkMultiPermissions();
   }
 
   colorTab() {
@@ -1137,30 +652,31 @@ class MapScreen extends React.Component {
     Animated.timing(
       this.state.topPosition,
       {
-          toValue:height-60,
+          toValue: height*0.777,
           duration:300
       }
     ).start();
   }
 
   changeText(text){
-    this.setState({recherche:text},()=>this.triDonnes());
+    this.setState(
+      {recherche: text},
+      ()=>this.triDonnes()
+    );
   }
   
   triDonnes(){
-    var text=this.state.recherche.toUpperCase();
-    console.log(text)
-    var listeRechercheSports = listeSports.filter(function(data){
-      var nom=data.nom.toUpperCase()
-      return(nom.indexOf(text)!=-1)});
+    var text = this.state.recherche.toUpperCase();
+
     var listeRechercheServices = listeServices.filter(function(data){
       var nom=data.nom.toUpperCase()
       return(nom.indexOf(text)!=-1)});
+
     var listeRechercheActivites = listeActivites.filter(function(data){
       var nom=data.nom.toUpperCase()
       return(nom.indexOf(text)!=-1)});
-    console.log(listeRechercheSports);
-    this.setState({listeRechercheActivites,listeRechercheServices,listeRechercheSports});
+
+    this.setState({listeRechercheActivites,listeRechercheServices});
   }
 
   pressMap(){
@@ -1202,7 +718,6 @@ class MapScreen extends React.Component {
         description:description[i],
         imageName: image
       });
-      console.log(Tmarker);
     }
 
     n = Tmarker.length;  
@@ -1443,152 +958,137 @@ class MapScreen extends React.Component {
   }
 
   render() {
-    console.log(this.state.listeMarkers);
     const domicile=[[48.862787,2.190225],[48.861142, 2.193969]];
     const gif=[[48.709731,2.16],[48.707556,2.166679]];
     var hauteur= 0.091/(this.state.region.latitudeDelta);
     
     return(
       <Container style={{flex:1}}>
+
         <View style={{flex:1}}>
           <CustomHeader title="Map" isHome={true} navigation={this.props.navigation} />
         </View>
-        <View style={{flex:8}}>
-          <View style={{height:35,width:width,flexDirection:'row',backgroundColor:'white',zIndex:1,opacity:0.8}}>
+
+        <View style={{flex:10}}>
+
+          <View style={{height:35, width:width, flexDirection:'row', backgroundColor:'white', zIndex:1, opacity:0.8}}>
+
             <TouchableOpacity 
             onPress={()=>this.changeCampus('CS')}
-            style={this.state.campus==='CS'?{flex:1,justifyContent:'center',alignItems:'center',borderBottomWidth:3,borderBottomColor:'#070027'}:
-            {flex:1,justifyContent:'center',alignItems:'center'}}
+            style={this.state.campus==='CS' ?
+            {flex:1, justifyContent:'center', alignItems:'center', borderBottomWidth:3, borderBottomColor:'#070027'}:
+            {flex:1, justifyContent:'center', alignItems:'center'}}
             >
-              <Text
-              style={this.state.campus==='CS'?{fontWeight:'bold'}:{opacity:0.7}}
-              >Campus CS</Text>
+              <Text style={this.state.campus==='CS'?{fontWeight:'bold'}:{opacity:0.7}}>
+                Campus CS
+              </Text>
             </TouchableOpacity>
+
             <TouchableOpacity 
             onPress={()=>this.changeCampus('Orsay')}
-            style={this.state.campus==='Orsay'?{flex:1,justifyContent:'center',alignItems:'center',borderBottomWidth:3,borderBottomColor:'#070027'}:
+            style={this.state.campus==='Orsay' ?
+            {flex:1,justifyContent:'center' , alignItems:'center', borderBottomWidth:3, borderBottomColor:'#070027'}:
             {flex:1,justifyContent:'center',alignItems:'center'}}
             >
-              <Text
-              style={this.state.campus==='Orsay'?{fontWeight:'bold'}:{opacity:0.7}}
-              >Orsay</Text>
+              <Text style={this.state.campus==='Orsay'?{fontWeight:'bold'}:{opacity:0.7}}>
+                Orsay Stadium
+              </Text>
             </TouchableOpacity>
-          </View>
-          <MapView
-          ref={mapview=>this.mapview=mapview}
-          showsUserLocation
-          showsCompass={true}
-          customMapStyle={mapStyle3}
-          provider={PROVIDER_GOOGLE}
-          style={{ flex: 1}}
-          initialRegion={campusGifRegion}
-          showsMyLocationButton
-          //onRegionChange={(region)=>this.changeRegion(region)}
-          onPress={()=>this.pressMap()}
-          >
-          {this.state.listeMarkers.map(marker=>(
-            <Marker
-            key={marker.id}
-            coordinate={marker.latlng}
-            title={marker.title}
-            description={marker.description}
-            
-            >
-            <Image source={this.urlImage(marker.imageName)} style={{height:35,width:35}}/>
-            </Marker>
-          ))}
-          
-          <Marker
-            key={12345}
-            coordinate={{latitude:48.708356, longitude:2.158893}}
-            title={'Village TOSS'}
-            description={'Bienvenue au TOSS'}
-            
-            >
-            <Image source={this.urlImage('toss')} style={{height:35,width:35}}/>
-            </Marker>
-          <Marker
-            key={12346}
-            coordinate={{latitude:48.709528, longitude:2.166622}}
-            title={'Accueil'}
-            description={'Bienvenue au TOSS'}
-            
-            >
-            <Image source={this.urlImage('accueil')} style={{height:35,width:35}}/>
-            </Marker>
-          
-          
-            <Marker
-            onPress={()=>{Clipboard.setString("Un jour quelqu'un décida de partir en Australie - Une légende du bds de son nom Marvaldi - Son absence a généré beaucoup de pleurs - Mais il restera à jamais dans nos coeurs ")}}
-            key={12347}
-            coordinate={{latitude:-27.486949, longitude:153.059514}}
-            title={'Bagadou'}
-            description={"On t'aime"}
-            
-            >
-            <Image source={this.urlImage('coeur')} style={{height:35,width:35}}/>
-            </Marker>
-        
-          
-          
-          </MapView>
-          <View  style={{height:60}}>
-            
-          </View>
-        
-        <Animated.View style={{height:450,width:width,position:'absolute',top:this.state.topPosition,borderTopWidth:1,borderColor:'#E9EAEB',backgroundColor:'white'}}>
-          <SearchBar
-            
-            platform="ios"
-            cancelButtonTitle="Cancel"
-            placeholder='Service / Activity' 
-            onClearText={()=>{}
-          }
-            onFocus={()=>this.expandSearch()}
-            onChangeText={(text)=>this.changeText(text)}
-            onCancel={()=>{this.closeSearch()}}
-            value={this.state.recherche}
-          />
-          <Tabs
-            
-            tabContainerStyle={{ height: 40}}
-            tabBarUnderlineStyle={{backgroundColor: this.colorTab(),height: 2}}
-          >
-          
 
-            <Tab heading="Services" 
-            textStyle={{fontSize:13,fontWeight:'bold',color:this.colorTab(),opacity:0.75}}
-            activeTextStyle={{fontSize:13,fontWeight:'bold',color:this.colorTab()}}
-            tabStyle={{backgroundColor:'white'}}
-            activeTabStyle={{backgroundColor:'white'}}
+          </View>
+
+          <MapView
+            ref={mapview => this.mapview = mapview}
+            showsUserLocation
+            showsCompass={true}
+            customMapStyle={mapStyle3}
+            provider={PROVIDER_GOOGLE}
+            style={{ flex: 1}}
+            initialRegion={campusGifRegion}
+            showsMyLocationButton
+            //onRegionChange={(region)=>this.changeRegion(region)}
+            onPress={()=>this.pressMap()}
+          >
+            {this.state.listeMarkers.map( marker => (
+              <Marker
+                key={marker.id}
+                coordinate={marker.latlng}
+                title={marker.title}
+                description={marker.description}
+              >
+                <Image source={this.urlImage(marker.imageName)} style={{height:35,width:35}}/>
+              </Marker>
+            ))} 
+          </MapView>
+
+          <View  style={{height:58}}/>
+        
+        <Animated.View style={{
+          height: 450,
+          width: width,
+          position: 'absolute',
+          top: this.state.topPosition,
+          borderTopWidth: 1,
+          borderColor: '#E9EAEB',
+          backgroundColor: 'white'}}>
+
+          <SearchBar 
+            placeholder = 'Service / Activity' 
+            onClearText = {()=>{}}
+            onFocus = {()=>this.expandSearch()}
+            onChangeText = {(text)=>this.changeText(text)}
+            onCancel = {()=>{this.closeSearch()}}
+            value = {this.state.recherche}
+            lightTheme = {true}
+            inputStyle={{backgroundColor: 'white'}}
+            inputContainerStyle={{backgroundColor: 'white'}}
+            containerStyle={{backgroundColor: '#e5e5e5'}}
+          />
+
+          <Tabs            
+            tabContainerStyle = {{ height: 40}}
+            tabBarUnderlineStyle = {{backgroundColor: this.colorTab(),height: 2}}
+          >
+
+            <Tab
+            heading = "Player Services" 
+            textStyle = {{fontSize:13,fontWeight:'bold',color:this.colorTab(),opacity:0.75}}
+            activeTextStyle = {{fontSize:13,fontWeight:'bold',color:this.colorTab()}}
+            tabStyle = {{backgroundColor:'white'}}
+            activeTabStyle = {{backgroundColor:'white'}}
             >
-              {this.state.listeRechercheServices.length===0?
-              <View style={{flex:1,alignItems:'center'}}><Text style={{color:'grey',marginTop:20}}>Aucune suggestion trouvée</Text></View>:
-              <FlatList
-                onScroll={()=>Keyboard.dismiss()}
-                keyboardShouldPersistTaps="handled"
-                data={this.state.listeRechercheServices}
-                keyExtractor={(item)=> item.id.toString()}
-                renderItem={({item})=>{
-                  return(
-                    <TouchableOpacity onPress={()=>this.clickSport(item.region,item.nom,item.lieu,item.id,item.campus,item.imageName)} style={{height:70,width:width,borderTopWidth:1,borderColor:'#e4e4e4',flexDirection:'row'}}>
-                      <View style={{flex:1.5,justifyContent:'center',alignItems:'center'}}>
-                          
-                              <Image style={{height:30,width:30,resizeMode:'contain'}} source={this.urlImage(item.imageName)}/>
-                          
-                      </View>
-                      <View style={{flex:10,flexDirection:'column',marginLeft:10,justifyContent:'center'}}>
-                          <Text style={{fontWeight:'bold',fontSize:19}}>{item.nom}</Text>
-                          <Text style={{color:'grey',fontSize:16}}>{item.description}</Text>
-                      </View>
-                    </TouchableOpacity>
-                )
-                }}
-              />
+              {
+                this.state.listeRechercheServices.length === 0 ?
+                <View style={{flex:1,alignItems:'center'}}>
+                  <Text style={{color:'grey',marginTop:20}}>
+                    Aucune suggestion trouvée
+                  </Text>
+                </View> :
+                <FlatList
+                  onScroll={()=>Keyboard.dismiss()}
+                  keyboardShouldPersistTaps="handled"
+                  data={this.state.listeRechercheServices}
+                  keyExtractor={(item)=> item.id.toString()}
+                  renderItem={({item})=>{
+                    return(
+                      <TouchableOpacity onPress={()=>this.clickSport(item.region,item.nom,item.lieu,item.id,item.campus,item.imageName)} style={{height:70,width:width,borderTopWidth:1,borderColor:'#e4e4e4',flexDirection:'row'}}>
+                        <View style={{flex:1.5,justifyContent:'center',alignItems:'center'}}>
+                            
+                                <Image style={{height:30,width:30,resizeMode:'contain'}} source={this.urlImage(item.imageName)}/>
+                            
+                        </View>
+                        <View style={{flex:10,flexDirection:'column',marginLeft:10,justifyContent:'center'}}>
+                            <Text style={{fontWeight:'bold',fontSize:19}}>{item.nom}</Text>
+                            <Text style={{color:'grey',fontSize:16}}>{item.description}</Text>
+                        </View>
+                      </TouchableOpacity>
+                  )
+                  }}
+                />
               }
-              
             </Tab>
-            <Tab heading="Activities" 
+
+            <Tab heading="Public Activities" 
             textStyle={{fontSize:13,fontWeight:'bold',color:this.colorTab(),opacity:0.75}}
             activeTextStyle={{fontSize:13,fontWeight:'bold',color:this.colorTab()}}
             tabStyle={{backgroundColor:'white'}}

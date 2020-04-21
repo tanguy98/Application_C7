@@ -25,28 +25,35 @@ class ResultsScreen extends React.Component {
   render() {
     return (
       <View style={{flex:1}}>
-        <CustomHeader title="Results" isHome={true} navigation={this.props.navigation} />
-        <ScrollView>
-          <View style={styles.titleView2}>
-            <Text style={styles.titleText}>Matchs</Text>
-          </View>
-          <View style={styles.titleView}>
-            <Text style={styles.titleText}>Femmes</Text>
-          </View>
-          <Match id1 = {1}
-                id2 = {2}
-                score1 = {18}
-                score2 = {12}
-          />
-          <View style={styles.titleView}>
-            <Text style={styles.titleText}>Hommes</Text>
-          </View>
-          <Match id1 = {1}
-                id2 = {2}
-                score1 = {18}
-                score2 = {12}
-          />
-        </ScrollView>
+
+        <View style={{flex:1}}>
+          <CustomHeader title="Results" isHome={true} navigation={this.props.navigation} />
+        </View>
+
+        <View style={{flex:10}}>
+          <ScrollView >
+            <View style={styles.titleView2}>
+              <Text style={styles.titleText}>Matchs</Text>
+            </View>
+            <View style={styles.titleView}>
+              <Text style={styles.titleText}>Femmes</Text>
+            </View>
+            <Match id1 = {1}
+                  id2 = {2}
+                  score1 = {18}
+                  score2 = {12}
+            />
+            <View style={styles.titleView}>
+              <Text style={styles.titleText}>Hommes</Text>
+            </View>
+            <Match id1 = {1}
+                  id2 = {2}
+                  score1 = {18}
+                  score2 = {12}
+            />
+          </ScrollView>
+        </View>
+
       </View>
 
     );

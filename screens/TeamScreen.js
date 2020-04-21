@@ -26,39 +26,44 @@ class TeamScreen extends React.Component {
   render() {
     return (
       <View style={{flex:1}}>
-        <CustomHeader title="Teams" isHome={true} navigation={this.props.navigation} />
-        <ScrollView>
-          <View style={styles.titleView}>
-            <Text style={styles.titleText}>Femmes</Text>
-          </View>
-          {
-            list.map((item, i) => (
-              <ListItem
-                key={i}
-                title={item.title}
-                leftIcon={{ name: item.icon }}
-                bottomDivider
-                chevron
-                onPress={() => this.props.navigation.navigate("PdfScreen")}
-              />
-            ))
-          }
-          <View style={styles.titleView}>
-            <Text style={styles.titleText}>Hommes</Text>
-          </View>
-          {
-            list.map((item, i) => (
-              <ListItem
-                key={i}
-                title={item.title}
-                leftIcon={{ name: item.icon }}
-                bottomDivider
-                chevron
-                onPress={() => this.props.navigation.navigate("PdfScreen")}
-              />
-            ))
-          }
-        </ScrollView>
+        <View style={{flex:1}}>
+          <CustomHeader title="Teams" isHome={true} navigation={this.props.navigation} />
+        </View>
+
+        <View style={{flex:11}}>
+          <ScrollView>
+            <View style={styles.titleView}>
+              <Text style={styles.titleText}>Femmes</Text>
+            </View>
+            {
+              list.map((item, i) => (
+                <ListItem
+                  key={i}
+                  title={item.title}
+                  leftIcon={{ name: item.icon }}
+                  bottomDivider
+                  chevron
+                  onPress={() => this.props.navigation.navigate("PdfScreen")}
+                />
+              ))
+            }
+            <View style={styles.titleView}>
+              <Text style={styles.titleText}>Hommes</Text>
+            </View>
+            {
+              list.map((item, i) => (
+                <ListItem
+                  key={i}
+                  title={item.title}
+                  leftIcon={{ name: item.icon }}
+                  bottomDivider
+                  chevron
+                  onPress={() => this.props.navigation.navigate("PdfScreen")}
+                />
+              ))
+            }
+          </ScrollView>
+        </View>
       </View>
     );
   }
