@@ -19,7 +19,10 @@ import MapStack from './TabStackNavigators/MapStack';
 import ProgramStack from './TabStackNavigators/ProgramStack';
 import ResultsStack from './TabStackNavigators/ResultsStack';
 import TeamStack from './TabStackNavigators/TeamStack';
+import SatisfactionStack from './TabStackNavigators/SatisfactionStack';
 import StaffStack from './TabStackNavigators/StaffStack';
+
+import PartnersScreen from '../screens/PartnersScreen';
 
 // NAVIGATION :
 
@@ -101,7 +104,7 @@ const screens = {
       screen: TeamStack,
       navigationOptions:{
         drawerLabel: ({backgroundColor, tintColor})=>(
-          <BarreMenu color={tintColor} backgroundColor={backgroundColor} title={'Teams'} iconName={'team'} type="AntDesign"/>
+          <BarreMenu color={tintColor} backgroundColor={backgroundColor} title={'Team Space'} iconName={'team'} type="AntDesign"/>
         )
       },
     },
@@ -109,7 +112,7 @@ const screens = {
       screen: ContactsStack,
       navigationOptions:{
         drawerLabel: ({backgroundColor, tintColor})=>(
-          <BarreMenu color={tintColor} backgroundColor={backgroundColor}  title={'Contacts'} iconName={'phone'} type="AntDesign"/>
+          <BarreMenu color={tintColor} backgroundColor={backgroundColor}  title={'Contacts'} iconName={'contacts'} type="AntDesign"/>
         )
       },
     },
@@ -121,11 +124,27 @@ const screens = {
         )
       }
     },
+    Partners :{
+      screen: PartnersScreen,
+      navigationOptions:{
+        drawerLabel: ({backgroundColor, tintColor})=>(
+          <BarreMenu color={tintColor} backgroundColor={backgroundColor} title={'Partners'} iconName={'handshake-o'} type="FontAwesome" />
+        )
+      }
+    },
+    Satisfaction :{
+      screen: SatisfactionStack,
+      navigationOptions:{
+        drawerLabel: ({backgroundColor, tintColor})=>(
+          <BarreMenu color={tintColor} backgroundColor={backgroundColor} title={'Satisfaction Form'} iconName={'like2'} type="AntDesign" />
+        )
+      }
+    },
     Bug :{
       screen: BugStack,
       navigationOptions:{
         drawerLabel: ({backgroundColor, tintColor})=>(
-          <BarreMenu color={tintColor} backgroundColor={backgroundColor} title={'Signaler un bug'} iconName={'customerservice'} type="AntDesign" />
+          <BarreMenu color={tintColor} backgroundColor={backgroundColor} title={'Signaler un bug'} iconName={'tool'} type="AntDesign" />
         )
       }
     },

@@ -4,16 +4,16 @@ import {View, WebView} from 'react-native';
 import CustomHeader from '../components/CustomHeader';
 
 //COMPONENTS :
-class GgForm extends React.Component {
+class GgFormSatisfaction extends React.Component {
 
   render () {
     return(
         <View style={{flex:1}}>
             <View style={{flex:1}}>
-                <CustomHeader title="Signaler un bug" isHome={true} navigation={this.props.navigation} />
+                <CustomHeader title="Satisfaction Form" isHome={true} navigation={this.props.navigation} />
             </View>
             <View style={{flex:11}}>
-                <WebView source={{uri:'https://docs.google.com/forms/d/e/1FAIpQLScGUKMj5jPWLHVBYZDilwLR-j6jEzOQLsXTGt8kecuz4W6lsA/viewform?usp=sf_link'}} />
+                <WebView source={{uri:'https://docs.google.com/forms/d/e/1FAIpQLSeErML5SduFvhhZAWVPstjC8WytCnCKORrTBMbEr6w7bvQnYw/viewform?usp=sf_link'}} />
             </View>
         </View>
         
@@ -22,5 +22,4 @@ class GgForm extends React.Component {
 }
 
 //EXPORTS
-export default GgForm;
-
+export default GgFormSatisfaction;

@@ -3,9 +3,8 @@
 import React from 'react';
 import { Text, Dimensions} from 'react-native';
 import {Right, Left, Icon, CardItem} from 'native-base';
-import { AntDesign,Ionicons,MaterialCommunityIcons } from '@expo/vector-icons';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import { FontAwesome ,Entypo} from '@expo/vector-icons';
+import { AntDesign, FontAwesome} from '@expo/vector-icons';
+
 
 // Component
 
@@ -24,6 +23,11 @@ Props include :
     if (type==="AntDesign"){
       return(
         <AntDesign name={iconName} size={27} style={{marginRight:10, color:couleur}} />
+      )
+    }
+    if (type==="FontAwesome"){
+      return(
+        <FontAwesome name={iconName} size={27} style={{marginRight:10, color:couleur}} />
       )
     }
     else {

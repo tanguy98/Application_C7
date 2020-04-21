@@ -1,12 +1,10 @@
+//IMPORTS
 import React from 'react';
 import {View, WebView} from 'react-native';
 import CustomHeader from '../components/CustomHeader';
 
+//COMPONENTS
 class PdfScreen extends React.Component {
-
-  constructor(props) {
-        super(props)
-    }
 
   render () {
     return(
@@ -22,4 +20,5 @@ class PdfScreen extends React.Component {
   }
 }
 
+//EXPORTS
 export default PdfScreen;
