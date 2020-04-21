@@ -1,7 +1,8 @@
-import React from 'react'
-import {Text, View, WebView, StyleSheet, ActivityIndicator } from 'react-native'
+import React from 'react';
+import {View, WebView} from 'react-native';
+import CustomHeader from '../components/CustomHeader';
 
-export default class PdfScreen extends React.Component {
+class PdfScreen extends React.Component {
 
   constructor(props) {
         super(props)
@@ -9,7 +10,16 @@ export default class PdfScreen extends React.Component {
 
   render () {
     return(
-      <WebView source={{uri: 'https://drive.google.com/file/d/1XYgcKsoA5POTLL91uOzy_bJPt8H0Wwfp/view?usp=sharing'}} />
+      <View style={{flex:1}}>
+          <View style={{flex:1}}>
+              <CustomHeader title="Staffeur" isHome={false} navigation={this.props.navigation} />
+          </View>
+          <View style={{flex:11}}>
+              <WebView source={{uri:'https://drive.google.com/file/d/1XYgcKsoA5POTLL91uOzy_bJPt8H0Wwfp/view?usp=sharing'}} />
+          </View>
+      </View>
     )
   }
 }
+
+export default PdfScreen;

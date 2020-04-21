@@ -12,6 +12,7 @@ import DrawerComponent from '../components/DrawerComponent';
 import BarreMenu from '../components/BarreMenu';
 
 // On importe tous les stacks navigators : 1 par onglet
+import BugStack from './TabStackNavigators/BugStack';
 import ContactsStack from './TabStackNavigators/ContactsStack';
 import InfosStack from './TabStackNavigators/InfosStack';
 import MapStack from './TabStackNavigators/MapStack';
@@ -117,6 +118,14 @@ const screens = {
       navigationOptions:{
         drawerLabel: ({backgroundColor, tintColor})=>(
           <BarreMenu color={tintColor} backgroundColor={backgroundColor} title={'Staff'} iconName={'idcard'} type="AntDesign" />
+        )
+      }
+    },
+    Bug :{
+      screen: BugStack,
+      navigationOptions:{
+        drawerLabel: ({backgroundColor, tintColor})=>(
+          <BarreMenu color={tintColor} backgroundColor={backgroundColor} title={'Signaler un bug'} iconName={'customerservice'} type="AntDesign" />
         )
       }
     },

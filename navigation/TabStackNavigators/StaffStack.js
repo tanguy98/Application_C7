@@ -16,9 +16,6 @@ const StaffStack = createStackNavigator(
   screens, 
   { defaultNavigationOptions: {
       header: null,
-      drawerLabel : ({tintColor})=>(
-        <BarreMenu couleur={tintColor} titre={'Staff'} logo={'ios-podium'}/>
-      )
     }
   }
 );
