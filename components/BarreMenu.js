@@ -16,7 +16,7 @@ Props include :
 - type : type of icon
 - logo : name of the icon chosen
 - color : couleur dans laquelle afficher le label (active tint ou pas)
-- title : title of the label 
+- title : title of the label
 
 */
 
@@ -36,12 +36,12 @@ Props include :
     return(
       <CardItem style={{
         width:Dimensions.get('window').width*3/4,
-        backgroundColor: this.props.backgroundColor
+        //backgroundColor: this.props.backgroundColor
         }} >
               <Left>
                 {this.createIcon(this.props.type,this.props.iconName,this.props.color,this.props.title)}
                 <Text style={{fontWeight:'bold',color:this.props.color}}>{this.props.title}</Text>
-              </Left> 
+              </Left>
               <Right>
                 <Icon active  style={{color:this.props.color}} name="arrow-forward" />
               </Right>
