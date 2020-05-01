@@ -98,6 +98,7 @@ class StaffScreen extends React.Component {
       if (this.state.onResearch){
         return(
           <View style={{flex:1}}>
+          <CustomHeader style ={{flex:1}} title="Contacts" isHome={true} navigation={this.props.navigation} />
               <FlatList
                 data={this.state.listeStaffeursRecherches}
                 keyExtractor={(item)=>item.staffeur.toString()}
@@ -122,6 +123,7 @@ class StaffScreen extends React.Component {
       if ((!this.state.onResearch)&&!((this.state.recherchesRecentes[0].length>0)||(this.state.recherchesRecentes[1].length>0)||(this.state.recherchesRecentes[2].length>0))){
         return(
           <View style={{flex:1}}>
+          <CustomHeader style={{flex:1}} title="Contacts" isHome={true} navigation={this.props.navigation} />
               <FlatList
                 data={listeStaffeurs}
                 keyExtractor={(item)=>item.staffeur.toString()}
