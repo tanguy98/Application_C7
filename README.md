@@ -67,7 +67,8 @@ Les fonctionnalités qui sont disponibles à ce jour dans l'application sont ré
 
 - Programme
 
-- Résultats
+- Résultats :\
+L'onglet résultat affiche les résultats des matchs joués. Il sera relié à la base de donnée pour afficher les matchs joués et le score, ainsi que les matchs à venir.
 
 - Team Space
 
