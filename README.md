@@ -63,7 +63,7 @@ Il y a dans ce dossier un exemple de screen vierge : [ExampleScreen.js](./screen
 
 Les fonctionnalités qui sont disponibles à ce jour dans l'application sont réparties dans les différents onglets :
 
-- Infos
+- Infos:\
 Cet onglet d'accueil affiche les dernières infos du tournoi.
 
 - Programme :\ 
@@ -74,10 +74,10 @@ L'onglet résultat affiche les résultats des matchs joués. Il sera relié à l
 
 - Team Space
 
-- Staffeurs
+- Staffeurs :\
 Cet onglet permet aux staffeurs d'avoir accès à leurs fiches de permanence durant le tournoi.
 
-- Contacts
+- Contacts :\
 Cet onglet donne les numéros et adresses mails utiles pour les participants, les équipes ou les staffeurs en cas de besoin.
 
 - Partenaires :\
