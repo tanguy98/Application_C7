@@ -64,8 +64,10 @@ Il y a dans ce dossier un exemple de screen vierge : [ExampleScreen.js](./screen
 Les fonctionnalités qui sont disponibles à ce jour dans l'application sont réparties dans les différents onglets :
 
 - Infos
+Cet onglet d'accueil affiche les dernières infos du tournoi.
 
-- Programme
+- Programme :\ 
+Cet onglet affichera le programme du tournoi pour les spectateurs.
 
 - Résultats :\
 L'onglet résultat affiche les résultats des matchs joués. Il sera relié à la base de donnée pour afficher les matchs joués et le score, ainsi que les matchs à venir.
@@ -73,8 +75,10 @@ L'onglet résultat affiche les résultats des matchs joués. Il sera relié à l
 - Team Space
 
 - Staffeurs
+Cet onglet permet aux staffeurs d'avoir accès à leurs fiches de permanence durant le tournoi.
 
 - Contacts
+Cet onglet donne les numéros et adresses mails utiles pour les participants, les équipes ou les staffeurs en cas de besoin.
 
 - Partenaires :\
 Cet onglet affiche les logos de tous les partenaires du C7. En cliquant sur le logo, on est redirigé vers le site du partenaire en question.
