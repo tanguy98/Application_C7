@@ -28,21 +28,8 @@ import PartnersScreen from '../screens/PartnersScreen';
 
 // Bottom Tab Navigator (qui regroupe les onglets les plus utilisés - surtout ceux adressés au public)
 
-const BottomTabNavigator = createBottomTabNavigator(
-  {
-    Infos: {
-      screen: InfosStack,
-      navigationOptions: {
-        tabBarLabel: 'Latest',
-        tabBarIcon: ({ focused, color, size, tintColor}) => {return(
-          <FontAwesome
-            name="info-circle"
-            size={30}
-            color={tintColor} />
-        )},
-      },
-    },
-    
+const BottomTabNavigator = createBottomTabNavigator({
+   
     Program: {
       screen: ProgramStack,
       navigationOptions: {
@@ -78,16 +65,23 @@ const BottomTabNavigator = createBottomTabNavigator(
   }
 );
 
-  {/*More: {
-    screen: ()=> {}},
-    navigationOptions: {
-      tabBarLabel: 'More',
-      tabBarIcon: ({ focused, color, size, tintColor}) => {return(
-        <IconEntypo name="dots-three-horizontal" size={30} color={tintColor} />
-      )},
-    }
-  },*/}
 
+// A AJOUTER QUAND L'ONGLET INFO SER REMPlI
+
+/*
+  Infos: {
+    screen: InfosStack,
+    navigationOptions: {
+      tabBarLabel: 'Latest',
+      tabBarIcon: ({ focused, color, size, tintColor}) => {return(
+        <FontAwesome
+          name="info-circle"
+          size={30}
+          color={tintColor} />
+      )},
+    },
+  },
+*/
 
 // Mise ne place du Drawer Navigator
 

@@ -1,6 +1,6 @@
 // IPMORTS
 import React from 'react';
-import { Platform, ScrollView, StyleSheet, Text, View} from 'react-native';
+import { Platform, ScrollView, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import { ListItem } from 'react-native-elements';
 
 import CustomHeader from '../components/CustomHeader';
@@ -22,19 +22,81 @@ const list = [
 
 class TeamScreen extends React.Component {
 
+  constructor(props){
+    super(props)
+    this.state={masculin:true}
+  }
 
-  render() {
-    return (
-      <View style={{flex:1}}>
-        <View style={{flex:1}}>
-          <CustomHeader title="Teams" isHome={true} navigation={this.props.navigation} />
-        </View>
+  colorTab(){
+    return('#549E5E')
+  }
 
-        <View style={{flex:11}}>
-          <ScrollView>
-            <View style={styles.titleView}>
-              <Text style={styles.titleText}>Femmes</Text>
-            </View>
+  styleBox(genre){
+    if (genre==='masculin'){
+      if (this.state.masculin){
+        return({flex:1,backgroundColor:this.colorTab(),marginLeft:10,marginRight:5,marginVertical:8,borderRadius:5,justifyContent:'center',alignItems:'center'})
+      }
+      else{
+        return({flex:1,backgroundColor:'white', marginLeft:10,marginRight:5,marginVertical:8,borderWidth:1,borderColor:this.colorTab(),borderRadius:5,justifyContent:'center',alignItems:'center'})
+      }
+    }
+    else{
+      if (this.state.masculin){
+        return({flex:1,backgroundColor:'white', marginLeft:5,marginRight:10,marginVertical:8,borderWidth:1,borderColor:this.colorTab(),borderRadius:5,justifyContent:'center',alignItems:'center'})
+      }
+      else{
+        return({flex:1,backgroundColor:this.colorTab(),marginLeft:5,marginRight:10,marginVertical:8,borderRadius:5,justifyContent:'center',alignItems:'center'})
+      }
+    }
+  }
+  
+  styleText(genre){
+    if (genre==='masculin'){
+      if(this.state.masculin){
+        return({color:'white', fontWeight:'bold'})
+      }
+      else{
+      return({color:this.colorTab(), fontWeight:'bold'})
+      }
+    }
+    else{
+      if (this.state.masculin){
+        return({color:this.colorTab(), fontWeight:'bold'})
+      }
+      else{
+        return({color:'white', fontWeight:'bold'})
+      }
+    }
+  }
+
+  changeMasculin1(){
+    this.setState({masculin:true})
+  }
+  changeMasculin2(){
+    this.setState({masculin:false})
+  }
+  displayVue(){
+    if (this.state.masculin){
+      return(
+        <ScrollView >
+            {
+              list.map((item, i) => (
+                <ListItem
+                  key={i}
+                  title={item.title}
+                  leftIcon={{ name: item.icon }}
+                  bottomDivider
+                  chevron
+                  onPress={() => this.props.navigation.navigate("PdfScreen",  {title:'Team Info', uri:'https://drive.google.com/file/d/1XYgcKsoA5POTLL91uOzy_bJPt8H0Wwfp/view?usp=sharing'})}
+                />
+              ))
+            }                    
+        </ScrollView>
+      )
+    }
+    else{
+      return(
+        <ScrollView >
             {
               list.map((item, i) => (
                 <ListItem
@@ -47,22 +109,37 @@ class TeamScreen extends React.Component {
                 />
               ))
             }
-            <View style={styles.titleView}>
-              <Text style={styles.titleText}>Hommes</Text>
-            </View>
-            {
-              list.map((item, i) => (
-                <ListItem
-                  key={i}
-                  title={item.title}
-                  leftIcon={{ name: item.icon }}
-                  bottomDivider
-                  chevron
-                  onPress={() => this.props.navigation.navigate("PdfScreen",  {title:'Team Info', uri:'https://drive.google.com/file/d/1XYgcKsoA5POTLL91uOzy_bJPt8H0Wwfp/view?usp=sharing'})}
-                />
-              ))
-            }
-          </ScrollView>
+                     
+        </ScrollView>
+      )
+    }
+  }
+
+
+  render() {
+    return (
+      <View style={{flex:1}}>
+
+        <View style={{flex:1}}>
+          <CustomHeader title="Teams" isHome={true} navigation={this.props.navigation} />
+        </View>
+
+        <View style={{flex:1, flexDirection:'row',height:50,}}>
+          <View style={{flex:1}}>
+          <TouchableOpacity onPress={()=>this.changeMasculin1()} style={this.styleBox('masculin')}>
+            <Text style={this.styleText('masculin')}>MEN</Text>
+          </TouchableOpacity>
+          </View>
+          <View style={{flex:1}}>
+          <TouchableOpacity onPress={()=>this.changeMasculin2()} style={this.styleBox('feminin')} >
+            <Text style={this.styleText('feminin')}>WOMEN</Text>
+          </TouchableOpacity>
+          </View>
+        </View>
+
+
+        <View style={{flex:11}}>
+          {this.displayVue()}
         </View>
       </View>
     );

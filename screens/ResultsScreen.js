@@ -22,6 +22,110 @@ import { MonoText } from '../components/StyledText';
 
 class ResultsScreen extends React.Component {
 
+  constructor(props){
+    super(props)
+    this.state={masculin:true}
+  }
+
+  colorTab(){
+    return('#549E5E')
+  }
+
+  styleBox(genre){
+    if (genre==='masculin'){
+      if (this.state.masculin){
+        return({flex:1,backgroundColor:this.colorTab(),marginLeft:10,marginRight:5,marginVertical:8,borderRadius:5,justifyContent:'center',alignItems:'center'})
+      }
+      else{
+        return({flex:1,backgroundColor:'white', marginLeft:10,marginRight:5,marginVertical:8,borderWidth:1,borderColor:this.colorTab(),borderRadius:5,justifyContent:'center',alignItems:'center'})
+      }
+    }
+    else{
+      if (this.state.masculin){
+        return({flex:1,backgroundColor:'white', marginLeft:5,marginRight:10,marginVertical:8,borderWidth:1,borderColor:this.colorTab(),borderRadius:5,justifyContent:'center',alignItems:'center'})
+      }
+      else{
+        return({flex:1,backgroundColor:this.colorTab(),marginLeft:5,marginRight:10,marginVertical:8,borderRadius:5,justifyContent:'center',alignItems:'center'})
+      }
+    }
+  }
+  
+  styleText(genre){
+    if (genre==='masculin'){
+      if(this.state.masculin){
+        return({color:'white', fontWeight:'bold'})
+      }
+      else{
+      return({color:this.colorTab(), fontWeight:'bold'})
+      }
+    }
+    else{
+      if (this.state.masculin){
+        return({color:this.colorTab(), fontWeight:'bold'})
+      }
+      else{
+        return({color:'white', fontWeight:'bold'})
+      }
+    }
+  }
+
+  changeMasculin1(){
+    this.setState({masculin:true})
+  }
+  changeMasculin2(){
+    this.setState({masculin:false})
+  }
+  displayVue(){
+    if (this.state.masculin){
+      return(
+        <ScrollView >
+          <Match id1 = {1}
+                id2 = {2}
+                score1 = {18}
+                score2 = {12}
+          />
+          <Match id1 = {1}
+                id2 = {2}
+                score1 = {18}
+                score2 = {12}
+          />
+          <Match id1 = {1}
+                id2 = {2}
+                score1 = {18}
+                score2 = {12}
+          />
+          <Match id1 = {1}
+                id2 = {2}
+                score1 = {18}
+                score2 = {12}
+          />                       
+        </ScrollView>
+      )
+    }
+    else{
+      return(
+        <ScrollView >
+          <Match id1 = {1}
+                id2 = {2}
+                score1 = {18}
+                score2 = {12}
+          />
+          <Match id1 = {1}
+                id2 = {2}
+                score1 = {18}
+                score2 = {12}
+          />
+          <Match id1 = {1}
+                id2 = {2}
+                score1 = {18}
+                score2 = {12}
+          />
+                     
+        </ScrollView>
+      )
+    }
+  }
+
   render() {
     return (
       <View style={{flex:1}}>
@@ -29,26 +133,24 @@ class ResultsScreen extends React.Component {
         <View style={{flex:1}}>
           <CustomHeader title="Match Results" isHome={true} navigation={this.props.navigation} />
         </View>
+        <View style={{flex:1, flexDirection:'row',height:50,}}>
+          <View style={{flex:1}}>
+          <TouchableOpacity onPress={()=>this.changeMasculin1()} style={this.styleBox('masculin')}>
+            <Text style={this.styleText('masculin')}>MASCULIN</Text>
+          </TouchableOpacity>
+          </View>
+          <View style={{flex:1}}>
+          <TouchableOpacity onPress={()=>this.changeMasculin2()} style={this.styleBox('feminin')} >
+            <Text style={this.styleText('feminin')}>FEMININ</Text>
+          </TouchableOpacity>
+          </View>
+        </View>
+
+
+        
 
         <View style={{flex:10}}>
-          <ScrollView >
-            <View style={styles.titleView}>
-              <Text style={styles.titleText}>Femmes</Text>
-            </View>
-            <Match id1 = {1}
-                  id2 = {2}
-                  score1 = {18}
-                  score2 = {12}
-            />
-            <View style={styles.titleView}>
-              <Text style={styles.titleText}>Hommes</Text>
-            </View>
-            <Match id1 = {1}
-                  id2 = {2}
-                  score1 = {18}
-                  score2 = {12}
-            />
-          </ScrollView>
+          {this.displayVue()}
         </View>
 
       </View>
@@ -150,7 +252,7 @@ const styles = StyleSheet.create({
   },
   titleView: {
     height:40,
-    backgroundColor:'#549E5E',
+    backgroundColor:'#6ce17b',
     justifyContent:'center',
     
     alignItems:'center',
