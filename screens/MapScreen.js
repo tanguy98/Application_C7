@@ -565,18 +565,6 @@ var listeServices=[
 
   {
     type:'Service',
-    nom:'',
-    lieu:[''],
-    description: '',
-    campus:'CS',
-    imageName:'buvette',
-    id:12,
-    region:[{latitude:48.707949,longitude: 2.157612,latitudeDelta:0.005,longitudeDelta:0.005}]
-
-  },
-
-  {
-    type:'Service',
     nom:'Ostéopathes',
     lieu:['Orsay'],
     campus:'Orsay',
@@ -597,7 +585,34 @@ var listeServices=[
     id:15,
     region:[{latitude:48.708225,longitude: 2.163852,latitudeDelta:0.005,longitudeDelta:0.005}]
 
-  } 
+  },
+
+  
+  {
+    type:'Service',
+    nom:'',
+    lieu:[''],
+    description: '',
+    campus:'CS',
+    imageName:'buvette',
+    id:12,
+    region:[{latitude:48.707949,longitude: 2.157612,latitudeDelta:0.005,longitudeDelta:0.005}]
+
+  },
+
+  
+  {
+    type:'Service',
+    nom:'',
+    lieu:[''],
+    description: '',
+    campus:'CS',
+    imageName:'buvette',
+    id:12,
+    region:[{latitude:48.707949,longitude: 2.157612,latitudeDelta:0.005,longitudeDelta:0.005}]
+
+  }
+
 ]
 
 // Activités et informations utiles pour le public :
