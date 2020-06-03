@@ -7,13 +7,15 @@ import CustomHeader from '../components/CustomHeader';
 class PdfScreen extends React.Component {
 
   render () {
+    const params = JSON.parse(JSON.stringify(this.props.navigation.state.params));
+
     return(
       <View style={{flex:1}}>
           <View style={{flex:1}}>
-              <CustomHeader title="Staffeur" isHome={false} navigation={this.props.navigation} />
+              <CustomHeader title={params.title} isHome={false} navigation={this.props.navigation} />
           </View>
           <View style={{flex:11}}>
-              <WebView source={{uri:'https://drive.google.com/file/d/1XYgcKsoA5POTLL91uOzy_bJPt8H0Wwfp/view?usp=sharing'}} />
+              <WebView source= {{uri : params.uri}} />
           </View>
       </View>
     )

@@ -1,4 +1,5 @@
 //IMPORTS
+import React from 'react';
 import { createStackNavigator} from 'react-navigation';
 import StaffScreen from '../../screens/StaffScreen';
 import PdfScreen from '../../screens/PdfScreen';

@@ -4,7 +4,7 @@ import {View, WebView} from 'react-native';
 import CustomHeader from '../components/CustomHeader';
 
 //COMPONENTS :
-class GgForm extends React.Component {
+class BugScreen extends React.Component {
 
   render () {
     return(
@@ -22,5 +22,5 @@ class GgForm extends React.Component {
 }
 
 //EXPORTS
-export default GgForm;
+export default BugScreen;
 

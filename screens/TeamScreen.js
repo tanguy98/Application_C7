@@ -43,7 +43,7 @@ class TeamScreen extends React.Component {
                   leftIcon={{ name: item.icon }}
                   bottomDivider
                   chevron
-                  onPress={() => this.props.navigation.navigate("PdfScreen")}
+                  onPress={() => this.props.navigation.navigate("PdfScreen", {title:'Team Info', uri:'https://drive.google.com/file/d/1XYgcKsoA5POTLL91uOzy_bJPt8H0Wwfp/view?usp=sharing'})}
                 />
               ))
             }
@@ -58,7 +58,7 @@ class TeamScreen extends React.Component {
                   leftIcon={{ name: item.icon }}
                   bottomDivider
                   chevron
-                  onPress={() => this.props.navigation.navigate("PdfScreen")}
+                  onPress={() => this.props.navigation.navigate("PdfScreen",  {title:'Team Info', uri:'https://drive.google.com/file/d/1XYgcKsoA5POTLL91uOzy_bJPt8H0Wwfp/view?usp=sharing'})}
                 />
               ))
             }
@@ -67,7 +67,6 @@ class TeamScreen extends React.Component {
       </View>
     );
   }
-
 }
 
 

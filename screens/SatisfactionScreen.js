@@ -4,7 +4,7 @@ import {View, WebView} from 'react-native';
 import CustomHeader from '../components/CustomHeader';
 
 //COMPONENTS :
-class GgFormSatisfaction extends React.Component {
+class SatisfactionScreen extends React.Component {
 
   render () {
     return(
@@ -22,4 +22,4 @@ class GgFormSatisfaction extends React.Component {
 }
 
 //EXPORTS
-export default GgFormSatisfaction;
+export default SatisfactionScreen;

@@ -27,14 +27,11 @@ class ResultsScreen extends React.Component {
       <View style={{flex:1}}>
 
         <View style={{flex:1}}>
-          <CustomHeader title="Results" isHome={true} navigation={this.props.navigation} />
+          <CustomHeader title="Match Results" isHome={true} navigation={this.props.navigation} />
         </View>
 
         <View style={{flex:10}}>
           <ScrollView >
-            <View style={styles.titleView2}>
-              <Text style={styles.titleText}>Matchs</Text>
-            </View>
             <View style={styles.titleView}>
               <Text style={styles.titleText}>Femmes</Text>
             </View>
@@ -153,18 +150,14 @@ const styles = StyleSheet.create({
   },
   titleView: {
     height:40,
-    backgroundColor:'lightgreen',
+    backgroundColor:'#549E5E',
     justifyContent:'center',
+    
     alignItems:'center',
   },
-  titleView2: {
-      height:50,
-      backgroundColor:'darkgreen',
-      justifyContent:'center',
-      alignItems:'center',
-    },
   titleText: {
     fontSize: 35,
+    marginVertical: 100,
     color:'white'
   }
 });

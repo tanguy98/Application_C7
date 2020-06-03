@@ -45,9 +45,6 @@ class StaffScreen extends React.Component {
 
         <View style={{flex:11}}>
           <ScrollView>
-            <View style={styles.titleView}>
-              <Text style={styles.titleText}>Staffeurs</Text>
-            </View>
               {
                 list.map((item, i) => (
                   <ListItem
@@ -56,7 +53,10 @@ class StaffScreen extends React.Component {
                     leftIcon={{ name: item.icon }}
                     bottomDivider
                     chevron
-                    onPress={() => this.props.navigation.navigate("PdfScreen")}
+                    onPress={() => this.props.navigation.navigate("PdfScreen", {
+                      title:'Staffeur X',
+                      uri:'https://drive.google.com/file/d/1XYgcKsoA5POTLL91uOzy_bJPt8H0Wwfp/view?usp=sharing',
+                    })}
                   />
                 ))
               }
@@ -156,16 +156,6 @@ const styles = StyleSheet.create({
   },
   pdf: {
     flex:1
-  },
-  titleView: {
-    height:50,
-    backgroundColor:'darkgreen',
-    justifyContent:'center',
-    alignItems:'center',
-  },
-  titleText: {
-    fontSize: 35,
-    color:'white'
   }
 });
 

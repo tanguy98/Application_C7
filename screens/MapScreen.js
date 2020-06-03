@@ -525,6 +525,8 @@ var mapStyle3=[
   }
 ]
 
+
+// Services pour les membres des équipes :
 var listeServices=[
   {
     type:'Service',
@@ -561,18 +563,6 @@ var listeServices=[
 
   },
 
-
-  {
-    type:'Service',
-    nom:'Shuttle buses',
-    lieu:['Bréguet', 'Bâtiment 225 Orsay', 'Bâtiment 310 Orsay'],
-    description:'Pôle navette',
-    campus:'CS',
-    imageName:'navette',
-    id:10,
-    region:[{latitude:48.709608,longitude: 2.162919,latitudeDelta:0.005,longitudeDelta:0.005},{latitude:48.713055,longitude: 2.213924,latitudeDelta:0.005,longitudeDelta:0.005},{latitude:48.698671,longitude: 2.165720,latitudeDelta:0.004,longitudeDelta:0.004},{latitude:48.700783, longitude:2.176774,latitudeDelta:0.004,longitudeDelta:0.004}]
-
-  },
   {
     type:'Service',
     nom:'',
@@ -587,6 +577,18 @@ var listeServices=[
 
   {
     type:'Service',
+    nom:'Ostéopathes',
+    lieu:['Orsay'],
+    campus:'Orsay',
+    description:'Tour de terrain',
+    imageName:'osteopathes',
+    id:4,
+    region:[{latitude:48.708457,longitude:2.157429,latitudeDelta:0.005,longitudeDelta:0.005}]
+
+  },
+
+  {
+    type:'Service',
     nom:'Petit-Déjeuner',
     lieu:['Eiffel'],
     description:'Eiffel',
@@ -595,23 +597,21 @@ var listeServices=[
     id:15,
     region:[{latitude:48.708225,longitude: 2.163852,latitudeDelta:0.005,longitudeDelta:0.005}]
 
-  }
-
-
-  
+  } 
 ]
 
+// Activités et informations utiles pour le public :
 var listeActivites=[
 
   {
     type:'Activites',
-    nom:'Ostéopathes',
-    lieu:['Orsay'],
-    campus:'Orsay',
-    description:'Tour de terrain',
-    imageName:'osteopathes',
-    id:4,
-    region:[{latitude:48.708457,longitude:2.157429,latitudeDelta:0.005,longitudeDelta:0.005}]
+    nom:'Shuttle buses',
+    lieu:['Bréguet', 'Bâtiment 225 Orsay', 'Bâtiment 310 Orsay'],
+    description:'Pôle navette',
+    campus:'CS',
+    imageName:'navette',
+    id:10,
+    region:[{latitude:48.709608,longitude: 2.162919,latitudeDelta:0.005,longitudeDelta:0.005},{latitude:48.713055,longitude: 2.213924,latitudeDelta:0.005,longitudeDelta:0.005},{latitude:48.698671,longitude: 2.165720,latitudeDelta:0.004,longitudeDelta:0.004},{latitude:48.700783, longitude:2.176774,latitudeDelta:0.004,longitudeDelta:0.004}]
 
   },
 
