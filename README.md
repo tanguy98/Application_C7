@@ -64,21 +64,21 @@ Il y a dans ce dossier un exemple de screen vierge : [ExampleScreen.js](./screen
 Les fonctionnalités qui sont disponibles à ce jour dans l'application sont réparties dans les différents onglets :
 
 - Infos:\
-Cet onglet d'accueil affiche les dernières infos du tournoi.
+Cet onglet d'accueil affiche les dernières infos du tournoi sous forme d'une image affichée ou d'un pdf (pour l'instant page blanche). 
 
-- Programme :\ 
-Cet onglet affichera le programme du tournoi pour les spectateurs.
+- Programme:\
+Cet onglet affichera le programme du tournoi pour les spectateurs sous forme d'une image affichée ou d'un pdf (pour l'instant page blanche).
 
 - Résultats :\
-L'onglet résultat affiche les résultats des matchs joués. Il sera relié à la base de donnée pour afficher les matchs joués et le score, ainsi que les matchs à venir.
+L'onglet résultat affiche les résultats des matchs joués. Il sera relié à la base de donnée pour afficher les matchs joués et le score, ainsi que les matchs à venir. La liste des matchs apparait sous forme de liste défilante et pour chaque match on a une ligne indiquant le noms des équipes et le score.
 
 - Team Space
 
 - Staffeurs :\
-Cet onglet permet aux staffeurs d'avoir accès à leurs fiches de permanence durant le tournoi.
+Cet onglet permet aux staffeurs d'avoir accès à leurs fiches de permanence durant le tournoi. Il y a une liste des staffeurs qui peut défiler et quand on clique sur le nom d'un staffeur on est redirigé vers un pdf qui donne le programme du staffeur en question. Sera plus tard relié à la base de donnée pour faire évoluer les pdf pendant le tournoi si besoin.
 
 - Contacts :\
-Cet onglet donne les numéros et adresses mails utiles pour les participants, les équipes ou les staffeurs en cas de besoin.
+Cet onglet donne les numéros et adresses mails utiles pour les participants, les équipes ou les staffeurs en cas de besoin. Pour l'instant encore en construction, mais fonctionnera avec un système où l'on peut appuyer sur le numéro pour l'appeler.
 
 - Partenaires :\
 Cet onglet affiche les logos de tous les partenaires du C7. En cliquant sur le logo, on est redirigé vers le site du partenaire en question.
