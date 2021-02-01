@@ -3,7 +3,6 @@
     "name": "Centrale7",
     "slug": "Centrale7",
     "privacy": "public",
-    "sdkVersion": "35.0.0",
     "platforms": [
       "ios",
       "android",
@@ -17,8 +16,8 @@
       "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
-    "androidStatusBar":{
-      "barStyle":"light-content"
+    "androidStatusBar": {
+      "barStyle": "light-content"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
