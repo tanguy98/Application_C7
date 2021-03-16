@@ -35,7 +35,7 @@ Le projet est composé :
 - une base de donnée Firebase qui contiennent les donées dynamiques.
 
 La navigation de l'application est assurée via react-navigation. L'application est organisée par onglets (principaux et secondaires) qui apparaissent respectivement dans une bottomTabBar et dans un drawerNavigator.
-Le contenu des onglets est détaillé dans la partie suivante.\
+Le contenu des onglets est détaillé dans la partie suivante.
 
 Pour plus d'informations sur les dépendances du projet (et notamment leur version), vous pouvez vous référrer à la section dependencies des fichiers [package.json](./package.json)
 
@@ -61,43 +61,43 @@ Il y a dans ce dossier un exemple de screen vierge : [ExampleScreen.js](./screen
 -------------------------------------
 ## Avancement du projet et description des fonctionnalités
 
-Les fonctionnalités qui sont disponibles à ce jour dans l'application sont réparties dans les différents onglets :\
+Les fonctionnalités qui sont disponibles à ce jour dans l'application sont réparties dans les différents onglets :
 
-- Infos:\
-Cet onglet d'accueil a vocation à afficher les dernières infos du tournoi sous forme d'une image affichée ou d'un pdf (pour l'instant page blanche). Dans sa version 0 (actuelle), il permet simplement d'afficher du texte. Un design plus complexe est envisageable pour l'année prochaine mais ne faisait pas partie de nos priorités pour cette année.\
-
-
-- Programme:\
-Cet onglet affichera le programme du tournoi pour les spectateurs sous forme d'une image affichée ou d'un pdf (pour l'instant page blanche).\
-
-- Résultats :\
-L'onglet résultat affiche les résultats des matchs joués. Il sera relié à la base de donnée pour afficher les matchs joués et le score, ainsi que les matchs à venir. La liste des matchs apparait sous forme de liste défilante et pour chaque match on a une ligne indiquant le noms des équipes et le score.\
-
-- Team Space :\
-
-Actuellement, cet onglet a pour mission d’informer les utilisateurs sur les équipes participant au tournoi. Lorsqu’on y accède, la liste des équipes est disponible. Cliquer sur une équipe vers une fiche personnalisée pour cette dernière, contenant quelques informations comme la provenance, le nombre de participations au tournoi, le nombres de titres et le (resp la) meilleur joueur (resp joueuse).\
-A terme, cet onglet pourra se dédoubler en une présentation de l'équipe d'une part, et un moyen d'informer les joueurs d'une équipe en particulier d'informations les concernants.\
+- Infos:
+Cet onglet d'accueil a vocation à afficher les dernières infos du tournoi sous forme d'une image affichée ou d'un pdf (pour l'instant page blanche). Dans sa version 0 (actuelle), il permet simplement d'afficher du texte. Un design plus complexe est envisageable pour l'année prochaine mais ne faisait pas partie de nos priorités pour cette année.
 
 
-- Staffeurs :\
-Cet onglet permet aux staffeurs d'avoir accès à leurs fiches de permanence durant le tournoi. Il y a une liste des staffeurs qui peut défiler et quand on clique sur le nom d'un staffeur on est redirigé vers un pdf qui donne le programme du staffeur en question. Sera plus tard relié à la base de donnée pour faire évoluer les pdf pendant le tournoi si besoin.\
+- Programme:
+Cet onglet affichera le programme du tournoi pour les spectateurs sous forme d'une image affichée ou d'un pdf (pour l'instant page blanche).
 
-- Contacts :\
-Cet onglet fournit aux utilisateurs les numéros de certains organisateurs, et des numéros en cas d’urgence. Il permet aussi aux « users » d’être redirigés vers les réseaux sociaux de l’application afin d’améliorer la visibilité de l’association.\
+- Résultats :
+L'onglet résultat affiche les résultats des matchs joués. Il sera relié à la base de donnée pour afficher les matchs joués et le score, ainsi que les matchs à venir. La liste des matchs apparait sous forme de liste défilante et pour chaque match on a une ligne indiquant le noms des équipes et le score.
 
-- Partenaires :\
-Cet onglet affiche les logos de tous les partenaires du C7. En cliquant sur le logo, on est redirigé vers le site du partenaire en question.\
+- Team Space :
 
-- Carte :\
-L'onglet carte utilise une bibliothèque spéciale qui permet d'utiliser une carte (de type plan ou maps), dans laquelle on est géolocalisée, et sur laquelle sont affichés des points d'intérêts. Cette carte peut être centrée sur le campus de CS ou sur le Club d'Orsay. Elle dispose aussi d'une barre de recherche qui permet de localiser des activités. On distingue les activités pour les joueurs exclusivement et celles qui concernent tout le monde.\
+Actuellement, cet onglet a pour mission d’informer les utilisateurs sur les équipes participant au tournoi. Lorsqu’on y accède, la liste des équipes est disponible. Cliquer sur une équipe vers une fiche personnalisée pour cette dernière, contenant quelques informations comme la provenance, le nombre de participations au tournoi, le nombres de titres et le (resp la) meilleur joueur (resp joueuse).
+A terme, cet onglet pourra se dédoubler en une présentation de l'équipe d'une part, et un moyen d'informer les joueurs d'une équipe en particulier d'informations les concernants.
 
-- Questionnaire de satisfaction :\
-Cet onglet contient une WebView qui affiche le contenu d'un GoogleForm : Il s'agit du questionnaire de satisfaction.\
 
-- Signaler un bug :\
-Cet onglet contient une WebView qui affiche le contenu d'un GoogleForm : Il s'agit d'un questionnaire pour signaler un bug sur l'application.\
+- Staffeurs :
+Cet onglet permet aux staffeurs d'avoir accès à leurs fiches de permanence durant le tournoi. Il y a une liste des staffeurs qui peut défiler et quand on clique sur le nom d'un staffeur on est redirigé vers un pdf qui donne le programme du staffeur en question. Sera plus tard relié à la base de donnée pour faire évoluer les pdf pendant le tournoi si besoin.
 
-L'application n'est pas encore disponible sur l'AppStore ni sur GooglePlay. Cependant la MVP est terminée. Avant sa première utilisation lors de la prochaine édition du tournois Centrale 7, il conviendrait de tester l'application sur un large pannel de téléphones (demander à toute l'association de la télécharger par exemple) de manière à éliminer un maximum de bug d'affichage liés à la diversités des formats d'écrans et des configurations de téléphone.)\
+- Contacts :
+Cet onglet fournit aux utilisateurs les numéros de certains organisateurs, et des numéros en cas d’urgence. Il permet aussi aux « users » d’être redirigés vers les réseaux sociaux de l’application afin d’améliorer la visibilité de l’association.
+
+- Partenaires :
+Cet onglet affiche les logos de tous les partenaires du C7. En cliquant sur le logo, on est redirigé vers le site du partenaire en question.
+
+- Carte :
+L'onglet carte utilise une bibliothèque spéciale qui permet d'utiliser une carte (de type plan ou maps), dans laquelle on est géolocalisée, et sur laquelle sont affichés des points d'intérêts. Cette carte peut être centrée sur le campus de CS ou sur le Club d'Orsay. Elle dispose aussi d'une barre de recherche qui permet de localiser des activités. On distingue les activités pour les joueurs exclusivement et celles qui concernent tout le monde.
+
+- Questionnaire de satisfaction :
+Cet onglet contient une WebView qui affiche le contenu d'un GoogleForm : Il s'agit du questionnaire de satisfaction.
+
+- Signaler un bug :
+Cet onglet contient une WebView qui affiche le contenu d'un GoogleForm : Il s'agit d'un questionnaire pour signaler un bug sur l'application.
+
+L'application n'est pas encore disponible sur l'AppStore ni sur GooglePlay. Cependant la MVP est terminée. Avant sa première utilisation lors de la prochaine édition du tournois Centrale 7, il conviendrait de tester l'application sur un large pannel de téléphones (demander à toute l'association de la télécharger par exemple) de manière à éliminer un maximum de bug d'affichage liés à la diversités des formats d'écrans et des configurations de téléphone.)
 
 -------------------------------------
 ## Procédure de lancement détaillée (Développeur) :
@@ -124,35 +124,36 @@ Vous pouvez également installer un émulateur de smartphone sur votre ordinateu
 -----------------------------------
 ## Description des données :
 
-**Données en dur dans l'application :**\
+**Données en dur dans l'application :**
+
 Les données volumineuses sont stockeées dans le dossier [assets](./assets). Le reste des données est écrit dans des constantes en dures dans les différents screens et components.
 
-**Données sur la BDD :**\
+**Données sur la BDD :**
 
-Fait par Pascal : s'adresser à lui pour des questions.\
+Fait par Pascal : s'adresser à lui pour des questions.
 
 Utilisation de firebase (https://firebase.google.com/) qui permet d’avoir une base de données en ligne sur les serveurs google.
-J’ai créé un projet où j’ai mis une base de données provisoire dans l’onglet database.\
+J’ai créé un projet où j’ai mis une base de données provisoire dans l’onglet database.
 
-Avec cet outil, il est donc de modifier et de créer directement la base de données sans passer par l’application (inteface administrateur de Firebase).\
+Avec cet outil, il est donc de modifier et de créer directement la base de données sans passer par l’application (inteface administrateur de Firebase).
 
-Pour relier l’application à la base de données il faut entrer les lignes de code suivantes dans le component Database (avec tous les paramètres APIKey etc qui sont trouvent dans les paramètres de notre projet Firebase) :\
+Pour relier l’application à la base de données il faut entrer les lignes de code suivantes dans le component Database (avec tous les paramètres APIKey etc qui sont trouvent dans les paramètres de notre projet Firebase) :
 
 >const firebase = require("firebase");\
 >require("firebase/firestore");\
 >const firebaseConfig = {\
 >  apiKey: "AIzaSyDP_Dbevczlh2eN1Zo9AyUvLZICoxnKhIc",\
 >  authDomain: "fzdf-2c9ff.firebaseapp.com",\
->  databaseURL: "https://fzdf-2c9ff.firebaseio.com",\
+>  databaseURL: "https://fzdf-2c9ff.firebaseio.com", \
 >  projectId: "fzdf-2c9ff",\
 >  storageBucket: "fzdf-2c9ff.appspot.com",\
 >  messagingSenderId: "750961760063",\
 >  appId: "1:750961760063:web:9ca0c45a75f67663c8e58a",\
 >  persistence: true,\
 >};\
->firebase.initializeApp(firebaseConfig);\
+>firebase.initializeApp(firebaseConfig);
 
-Enfin pour récupérer les données de la base de données on utilise des commandes SQL (je ne l’ai pas encore fait sur l’application mais j’ai l’exemple du code Toss où ils utilisent la commande Get pour accéder aux données) :\
+Enfin pour récupérer les données de la base de données on utilise des commandes SQL (je ne l’ai pas encore fait sur l’application mais j’ai l’exemple du code Toss où ils utilisent la commande Get pour accéder aux données) :
 
 >    _loadMatchs () {\
 >        this.setState({donnees: []}, ()=>{\
@@ -176,12 +177,6 @@ Enfin pour récupérer les données de la base de données on utilise des comman
 >            })\
 >            .then(() => this.setState({loading: false}))\
 >        })\
->    }\
+>    }
 
-Pour conclure j’avais juste réussi à relier mon projet firebase et l’application (normalement ça marche), il me reste à écrire toutes les fonctions de récupération des données sur la database. Ensuite il faudrait vérifier que tout s’actualise sur l’application et réfléchir à comment modifier cette base de données en live pour avoir les scores des matchs (soit on modifie directement la base de données mais je ne pense pas que ça soit le plus simple soit dans la version administrateur de l’appli on code un onglet qui nous permettrait de mettre à jour la base de données par exemple on sélectionnerait les 2 équipes dans 2 menus déroulant on écrirait le score et en cliquand sur un bouton submit cela mettrait à jour la base de données).\
-
-
--------------------------------
-## Liens utiles :
-
-Repository Github : https://github.com/tanguy98/pictionary/tree/master
+Pour conclure j’avais juste réussi à relier mon projet firebase et l’application (normalement ça marche), il me reste à écrire toutes les fonctions de récupération des données sur la database. Ensuite il faudrait vérifier que tout s’actualise sur l’application et réfléchir à comment modifier cette base de données en live pour avoir les scores des matchs (soit on modifie directement la base de données mais je ne pense pas que ça soit le plus simple soit dans la version administrateur de l’appli on code un onglet qui nous permettrait de mettre à jour la base de données par exemple on sélectionnerait les 2 équipes dans 2 menus déroulant on écrirait le score et en cliquand sur un bouton submit cela mettrait à jour la base de données).
