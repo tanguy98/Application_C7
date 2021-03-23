@@ -2,6 +2,8 @@
 import React from 'react';
 import { Platform, ScrollView, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import { ListItem } from 'react-native-elements';
+import * as firebase from 'firebase'
+import 'firebase/firestore';
 
 import CustomHeader from '../components/CustomHeader';
 
@@ -24,8 +26,60 @@ class TeamScreen extends React.Component {
 
   constructor(props){
     super(props)
-    this.state={masculin:true}
+    this.state=({
+      masculin:true,donnees:[],teamsF:[],loading:true
+      })
   }
+
+// Chargement des données
+  componentDidMount(){
+    this._loadData()
+  }
+
+  
+  _loadData(){
+    this.setState({donnees:[]},()=>{
+        var that=this
+        
+        var db = firebase.firestore();
+    
+        var docRef = db.collection("Equipes").doc("Femmes").collection("Femmes")
+        docRef.get().then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc) {
+                var match=doc.data()
+                that.setState({donnees:that.state.donnees.concat(match)})
+                
+                
+            });
+        })
+        .then(()=>this.loadTeams())
+        .catch(function(error) {
+            console.log("Error getting document:", error);
+        })
+        .then(()=>this.setState({loading:false}))
+        
+    }
+    )
+  }
+
+  loadTeams(){
+        
+    var listeTeams=this.state.donnees
+    longueur=listeTeams.length
+    
+    var teamsF=[]
+    
+    for (i=0;i<longueur;i++){
+        
+        var team=listeTeams[i]
+        var teamName={name : team.Name}
+         
+        teamsF.push(teamName)
+    }
+    
+    this.setState({teamsF:teamsF})
+  }
+
 
   colorTab(){
     return('#549E5E')
@@ -98,11 +152,11 @@ class TeamScreen extends React.Component {
       return(
         <ScrollView >
             {
-              list.map((item, i) => (
+              this.state.teamsF.map((item, i) => (
                 <ListItem
                   key={i}
-                  title={item.title}
-                  leftIcon={{ name: item.icon }}
+                  title={item.name}
+                  leftIcon={{ name: 'add-circle-outline' }}
                   bottomDivider
                   chevron
                   onPress={() => this.props.navigation.navigate("PdfScreen", {title:'Team Info', uri:'https://drive.google.com/file/d/1XYgcKsoA5POTLL91uOzy_bJPt8H0Wwfp/view?usp=sharing'})}
