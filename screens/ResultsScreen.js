@@ -30,41 +30,44 @@ class ResultsScreen extends React.Component {
   colorTab(){
     return('#549E5E')
   }
+  colorBord(){
+    return('#202421')
+  }
 
   styleBox(genre){
     if (genre==='masculin'){
       if (this.state.masculin){
-        return({flex:1,backgroundColor:this.colorTab(),marginLeft:10,marginRight:5,marginVertical:8,borderRadius:5,justifyContent:'center',alignItems:'center'})
+        return({flex:1,backgroundColor:'white',marginLeft:10,marginRight:5,marginVertical:8,borderWidth:1,borderColor:this.colorBord(),borderRadius:5,justifyContent:'center',alignItems:'center'})
       }
       else{
-        return({flex:1,backgroundColor:'white', marginLeft:10,marginRight:5,marginVertical:8,borderWidth:1,borderColor:this.colorTab(),borderRadius:5,justifyContent:'center',alignItems:'center'})
+        return({flex:1,backgroundColor:this.colorTab(), marginLeft:10,marginRight:5,marginVertical:8,borderWidth:1,borderColor:this.colorTab(),borderRadius:5,justifyContent:'center',alignItems:'center'})
       }
     }
     else{
       if (this.state.masculin){
-        return({flex:1,backgroundColor:'white', marginLeft:5,marginRight:10,marginVertical:8,borderWidth:1,borderColor:this.colorTab(),borderRadius:5,justifyContent:'center',alignItems:'center'})
+        return({flex:1,backgroundColor:this.colorTab(), marginLeft:5,marginRight:10,marginVertical:8,borderWidth:1,borderColor:this.colorTab(),borderRadius:5,justifyContent:'center',alignItems:'center'})
       }
       else{
-        return({flex:1,backgroundColor:this.colorTab(),marginLeft:5,marginRight:10,marginVertical:8,borderRadius:5,justifyContent:'center',alignItems:'center'})
+        return({flex:1,backgroundColor:'white',marginLeft:5,marginRight:10,marginVertical:8,borderWidth:1,borderColor:this.colorBord(),borderRadius:5,justifyContent:'center',alignItems:'center'})
       }
     }
   }
-  
+
   styleText(genre){
     if (genre==='masculin'){
       if(this.state.masculin){
-        return({color:'white', fontWeight:'bold'})
+        return({color:this.colorTab(), fontWeight:'bold'})
       }
       else{
-      return({color:this.colorTab(), fontWeight:'bold'})
+      return({color:'white', fontWeight:'bold'})
       }
     }
     else{
       if (this.state.masculin){
-        return({color:this.colorTab(), fontWeight:'bold'})
+        return({color:'white', fontWeight:'bold'})
       }
       else{
-        return({color:'white', fontWeight:'bold'})
+        return({color:this.colorTab(), fontWeight:'bold'})
       }
     }
   }
@@ -98,7 +101,7 @@ class ResultsScreen extends React.Component {
                 id2 = {2}
                 score1 = {18}
                 score2 = {12}
-          />                       
+          />
         </ScrollView>
       )
     }
@@ -120,7 +123,7 @@ class ResultsScreen extends React.Component {
                 score1 = {18}
                 score2 = {12}
           />
-                     
+
         </ScrollView>
       )
     }
@@ -147,7 +150,7 @@ class ResultsScreen extends React.Component {
         </View>
 
 
-        
+
 
         <View style={{flex:10}}>
           {this.displayVue()}
@@ -254,7 +257,7 @@ const styles = StyleSheet.create({
     height:40,
     backgroundColor:'#6ce17b',
     justifyContent:'center',
-    
+
     alignItems:'center',
   },
   titleText: {
