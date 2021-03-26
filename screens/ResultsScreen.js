@@ -37,18 +37,18 @@ class ResultsScreen extends React.Component {
   styleBox(genre){
     if (genre==='masculin'){
       if (this.state.masculin){
-        return({flex:1,backgroundColor:'white',marginLeft:10,marginRight:5,marginVertical:8,borderWidth:1,borderColor:this.colorBord(),borderRadius:5,justifyContent:'center',alignItems:'center'})
+        return({flex:1,backgroundColor:'white',marginLeft:10,marginRight:5,marginVertical:8,borderWidth:1,borderColor:this.colorBord(),borderRadius:5,justifyContent:'center',alignItems:'center', flexGrow : 1})
       }
       else{
-        return({flex:1,backgroundColor:this.colorTab(), marginLeft:10,marginRight:5,marginVertical:8,borderWidth:1,borderColor:this.colorTab(),borderRadius:5,justifyContent:'center',alignItems:'center'})
+        return({flex:1,backgroundColor:this.colorTab(), marginLeft:10,marginRight:5,marginVertical:8,borderWidth:1,borderColor:this.colorTab(),borderRadius:5,justifyContent:'center',alignItems:'center', flexGrow : 1})
       }
     }
     else{
       if (this.state.masculin){
-        return({flex:1,backgroundColor:this.colorTab(), marginLeft:5,marginRight:10,marginVertical:8,borderWidth:1,borderColor:this.colorTab(),borderRadius:5,justifyContent:'center',alignItems:'center'})
+        return({flex:1,backgroundColor:this.colorTab(), marginLeft:5,marginRight:10,marginVertical:8,borderWidth:1,borderColor:this.colorTab(),borderRadius:5,justifyContent:'center',alignItems:'center', flexGrow : 1})
       }
       else{
-        return({flex:1,backgroundColor:'white',marginLeft:5,marginRight:10,marginVertical:8,borderWidth:1,borderColor:this.colorBord(),borderRadius:5,justifyContent:'center',alignItems:'center'})
+        return({flex:1,backgroundColor:'white',marginLeft:5,marginRight:10,marginVertical:8,borderWidth:1,borderColor:this.colorBord(),borderRadius:5,justifyContent:'center',alignItems:'center', flexGrow : 1})
       }
     }
   }
@@ -136,7 +136,7 @@ class ResultsScreen extends React.Component {
         <View style={{flex:1}}>
           <CustomHeader title="Match Results" isHome={true} navigation={this.props.navigation} />
         </View>
-        <View style={{flex:1, flexDirection:'row',height:50,}}>
+        <View style={{flex:1, flexDirection:'row',height:50, margin : 5}}>
           <View style={{flex:1}}>
           <TouchableOpacity onPress={()=>this.changeMasculin1()} style={this.styleBox('masculin')}>
             <Text style={this.styleText('masculin')}>MASCULIN</Text>
