@@ -14,36 +14,7 @@ class Match extends React.Component {
     constructor(props){
         super(props)
     }
-  imageEquipe(id){
-        switch (id){
-            case 1:
-                return(require('../assets/images/logo1.png'))
-                break;
-            case 2:
-                return(require('../assets/images/logo2.jpg'))
-                break;
-
-            default:
-                return(require('../assets/images/icon.png'))
-
-        }
-    }
-
-nomEquipe(id){
-        switch (id){
-            case 1:
-                return("Stade Montois")
-                break;
-            case 2:
-            return("Stade Toulousain")
-            break;
-
-            default:
-            return("CRC")
-
-        }
-    }
-
+ 
 render () {
     //const { team } = this.props
     //console.log(team)
