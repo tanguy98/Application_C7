@@ -1,6 +1,6 @@
 // IPMORTS
 import React from 'react';
-import { Platform, ScrollView, StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import { Platform, ScrollView, StyleSheet, Text, View, TouchableOpacity, Image, ActivityIndicator} from 'react-native';
 import { ListItem, Avatar } from 'react-native-elements';
 import * as firebase from 'firebase'
 import 'firebase/firestore';
@@ -10,16 +10,7 @@ import CustomHeader from '../components/CustomHeader';
 
 // CONSTANTS :
 
-const list = [
-  {
-    title: 'Equipe 1',
-    icon: 'add-circle-outline'
-  },
-  {
-    title: 'Equipe 2',
-    icon: 'add-circle-outline'
-  },
-]
+
 
 // COMPONENT :
 
@@ -31,11 +22,23 @@ class TeamScreen extends React.Component {
     masculin:true,donneesF:[],teamsF:[], teamsH:[], donneesH : [], loading:true
       })
   }
+  _displayLoading() {
+    if (this.state.loading) {
+      return (
+        <View style={styles.loading_container}>
+          <ActivityIndicator size='large' />
+        </View>
+      )
+    }
+  }
 
 // Chargement des données
   componentDidMount(){
     this._loadDataF()
     this._loadDataH()
+    this.setState({
+      loading : true
+    })
   }
 
   
@@ -230,9 +233,12 @@ class TeamScreen extends React.Component {
 
 
   render() {
+    //console.log(this.props)
     return (
+      
+      
       <View style={{flex:1}}>
-
+          
         <View style={{flex:1}}>
           <CustomHeader title="Teams" isHome={true} navigation={this.props.navigation} />
         </View>
@@ -252,6 +258,7 @@ class TeamScreen extends React.Component {
 
 
         <View style={{flex:11}}>
+          {this._displayLoading()}
           {this.displayVue()}
         </View>
       </View>

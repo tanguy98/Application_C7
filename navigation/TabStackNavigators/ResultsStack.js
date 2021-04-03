@@ -11,7 +11,7 @@ const screens = {
   const ResultsStack = createStackNavigator(
     screens, 
     { defaultNavigationOptions: { header: null }
-    }
+    },
   );
 
 export default ResultsStack;

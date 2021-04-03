@@ -1,7 +1,7 @@
 // Components/FilmItem.js
 
 import React from 'react'
-import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, Text, Image, TouchableOpacity, ActivityIndicator } from 'react-native'
 
 class Team extends React.Component {
     constructor(props){
@@ -11,7 +11,7 @@ class Team extends React.Component {
       }
   render() {
     const { team } = this.props
-    console.log(this.props)
+    //console.log(team)
     return (
       <TouchableOpacity
         style={styles.main_container}
