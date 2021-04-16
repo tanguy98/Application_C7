@@ -20,7 +20,7 @@ render () {
     //console.log(team)
     
     const { match } = this.props
-    console.log("match ", match)
+    //console.log("match ", match)
     if (match != undefined ){       //on n'affiche que les matchs en cours de jeu
       return (
     <View style={styles.bigbox}>

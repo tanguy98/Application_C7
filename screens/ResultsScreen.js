@@ -220,7 +220,9 @@ class ResultsScreen extends React.Component {
 
   render() {
     //const finale = matchsF[0]
-    console.log(this.state.matchsF)
+    //console.log(this.state.matchsF)
+    //var db = firebase.firestore();
+    //console.log(firebase.firestore.getCollections())
     if (this.state.matchsF != undefined){
     return (
 
@@ -241,6 +243,7 @@ class ResultsScreen extends React.Component {
           </View>
         </View>
         <View style={{flex:10}}>
+
           {this.displayVue()}
         </View>
 
@@ -266,7 +269,8 @@ class ResultsScreen extends React.Component {
           </View>
         </View>
         <View style={{flex:10}}>
-          
+        {this._displayLoading()}
+
         </View>
 
       </View>)
