@@ -27,7 +27,13 @@ const firebaseConfig = {
     appId: "1:750961760063:web:9ca0c45a75f67663c8e58a"
   };
 
-firebase.initializeApp(firebaseConfig);
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+ }else {
+    firebase.app(); // if already initialized, use that one
+ }
+
+//firebase.initializeApp(firebaseConfig);
 
 // COMPONENT
 class App extends React.Component{
