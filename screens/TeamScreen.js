@@ -7,6 +7,7 @@ import 'firebase/firestore';
 import AffichageEquipe from "../components/AffichageEquipe"
 
 import CustomHeader from '../components/CustomHeader';
+import { Button } from 'native-base';
 
 // CONSTANTS :
 
@@ -14,7 +15,14 @@ import CustomHeader from '../components/CustomHeader';
 
 // COMPONENT :
 
+const wait = (timeout) => {
+  return new Promise(resolve => setTimeout(resolve, timeout));
+}
+
+  
+
 class TeamScreen extends React.Component {
+
 
   constructor(props){
     super(props)
@@ -22,6 +30,7 @@ class TeamScreen extends React.Component {
     masculin:true,donneesF:[],teamsF:[], teamsH:[], donneesH : [], loading:true
       })
   }
+  
   _displayLoading() {
     if (this.state.loading) {
       return (
@@ -184,10 +193,14 @@ class TeamScreen extends React.Component {
   changeMasculin2(){
     this.setState({masculin:false})
   }
-  displayVue(){
+  
+  displayVue(){  
+    
     if (this.state.masculin){
       return(
-        <ScrollView >
+        <ScrollView 
+        
+        >
         {
           this.state.teamsH.map((item, i) => (
            
@@ -208,8 +221,11 @@ class TeamScreen extends React.Component {
       )
     }
     else{
+      
       return(
-        <ScrollView >
+      
+        <ScrollView>
+          
             {
               this.state.teamsF.map((item, i) => (
                
@@ -241,6 +257,7 @@ class TeamScreen extends React.Component {
           
         <View style={{flex:1}}>
           <CustomHeader title="Teams" isHome={true} navigation={this.props.navigation} />
+          
         </View>
 
         <View style={{flex:1, flexDirection:'row',height:50, margin : 5}}>
@@ -253,6 +270,7 @@ class TeamScreen extends React.Component {
           <TouchableOpacity onPress={()=>this.changeMasculin2()} style={this.styleBox('feminin')} >
             <Text style={this.styleText('feminin')}>WOMEN</Text>
           </TouchableOpacity>
+          
           </View>
         </View>
 
@@ -260,7 +278,9 @@ class TeamScreen extends React.Component {
         <View style={{flex:11}}>
           {this._displayLoading()}
           {this.displayVue()}
+          
         </View>
+        
       </View>
     );
   }
@@ -374,6 +394,10 @@ const styles = StyleSheet.create({
     height: 169,
     margin: 5
   },
+  bouton : {
+    height: 169,
+    margin: 5
+  }
 });
 
 // EXPORT :

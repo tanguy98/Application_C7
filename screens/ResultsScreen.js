@@ -13,7 +13,7 @@ import { WebBrowser } from 'expo';
 import { ListItem } from 'react-native-elements'
 import Match from '../components/Match';
 import CustomHeader from '../components/CustomHeader';
-import {ActivityIndicator, SafeAreaView, RefreshControl} from "react-native" // SafeAreaView --> USEFUL FOR IPhone X and new phones designs !
+import {ActivityIndicator, SafeAreaView, Button} from "react-native" // SafeAreaView --> USEFUL FOR IPhone X and new phones designs !
 import { MonoText } from '../components/StyledText';
 import * as firebase from 'firebase'
 import 'firebase/firestore';
@@ -29,6 +29,7 @@ class ResultsScreen extends React.Component {
 
   constructor(props){
     super(props)
+    this.mybool==true
     this.state=({
       masculin:true,
       donneesF : [],
@@ -37,6 +38,7 @@ class ResultsScreen extends React.Component {
       matchsH : [],
       loading : true})
   }
+  
   
   _displayLoading() {
     if (this.state.loading) {
@@ -56,6 +58,7 @@ class ResultsScreen extends React.Component {
       loading : true
     })
   }
+  
 
   
   _loadDataF(){
@@ -80,7 +83,7 @@ class ResultsScreen extends React.Component {
         .then(()=>this.setState({loading:false}))
         
     }
-    )
+        )
   }
   _loadDataH(){
     this.setState({donneesH:[]},()=>{
@@ -183,18 +186,27 @@ class ResultsScreen extends React.Component {
     }
   }
   
-
+  test(){
+    if (this.mybool==true) {this.forceUpdate()}
+  }
   changeMasculin1(){
     this.setState({masculin:true})
   }
   changeMasculin2(){
     this.setState({masculin:false})
   }
+  refreshPage() {
+    window.location.reload(true);
+  }
   displayVue(){
     if (this.state.masculin){
       return(
 
         <ScrollView >
+        <View>
+        <Button onPress= {()=>this._loadDataF()} title="Refresh" color = {this.colorTab()}
+        borderColor={this.colorBord()} borderRadius="5" >  </Button>
+        </View>
           <Match id1 = {1}
                 id2 = {2}
                 score1 = {18}
@@ -206,6 +218,10 @@ class ResultsScreen extends React.Component {
     else{
       return(
         <ScrollView>
+        <View>
+        <Button onPress= {()=>this._loadDataF()} title="Refresh" color = {this.colorTab()}
+        borderColor={this.colorBord()} borderRadius="5" >  </Button>
+        </View>
           {
               this.state.matchsF.map((item, i) => (
           <Match 
@@ -245,6 +261,7 @@ class ResultsScreen extends React.Component {
         <View style={{flex:10}}>
 
           {this.displayVue()}
+
         </View>
 
       </View>
@@ -255,6 +272,7 @@ class ResultsScreen extends React.Component {
       <View style={{flex:1}}>
         <View style={{flex:1}}>
           <CustomHeader title="Match Results" isHome={true} navigation={this.props.navigation} />
+
         </View>
         <View style={{flex:1, flexDirection:'row',height:50, margin : 5}}>
           <View style={{flex:1}}>
@@ -270,7 +288,10 @@ class ResultsScreen extends React.Component {
         </View>
         <View style={{flex:10}}>
         {this._displayLoading()}
-
+        <View>
+        <Button onPress= {()=>this._loadDataF()} title="Refresh" color = {this.colorTab()}
+        borderColor={this.colorBord()} borderRadius="5" >  </Button>
+        </View>
         </View>
 
       </View>)
@@ -390,7 +411,9 @@ const styles = StyleSheet.create({
     bottom: 0,
     alignItems: 'center',
     justifyContent: 'center'
-  }
+  },
+  
+  
 });
 
 //EXPORTS
