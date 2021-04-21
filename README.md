@@ -14,6 +14,10 @@ Contact : *tanguy.houette@student-cs.fr*
 Tanguy HOUETTE (2A), Tancrède DE GUIGNE (1A), Pascal RAILLE (1A), Saad CHTOUKI (1A), Corentin DELLOYE (1A)\
 Contact : *tanguy.houette@student-cs.fr*
 
+**2020-2021** : Minimal Valuable Product - Connection avec une base de données pour permettre des actualisations rapides et faciles, refonte de la navigation \
+Tancrède DE GUIGNE (2A), Pascal RAILLE (2A), Pierre PELLETIER de CHAMBURE (2A), Guillaume RAYSSEGUIER, Eliott PI\
+Contact : *tanguy.houette@student-cs.fr*
+
 -------------------
 ## Description générale du projet :
 
