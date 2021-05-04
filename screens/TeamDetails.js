@@ -58,12 +58,11 @@ class TeamDetails extends React.Component {
     return(
       <ScrollView >
           {
-            l.map((item, i) => (
-
-              <ListItem key={i} title={item.nom} bottomDivider topDivider>
-                <Avatar source={cyril}/>
-              </ListItem>
-            ))
+            <FlatList
+              data={l}
+              keyExtractor={(item) => item.id.toString()}
+              renderItem={({item}) => <PlayerItem joueur={item}/>}
+            />
 
           }
 
