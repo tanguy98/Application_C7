@@ -1,20 +1,20 @@
 //IMPORTS
 import React from 'react';
 import { createStackNavigator} from 'react-navigation';
-import TeamScreen from '../../screens/TeamScreen';
+import TeamDetails from '../../screens/TeamDetails';
 import PdfScreen from '../../screens/PdfScreen';
 
 // Constants
 
 const screens = {
-  TeamHome: TeamScreen,
+  TeamHome: TeamDetails,
   PdfScreen :PdfScreen,
 }
 
 // TeamStack
 
 const TeamStack = createStackNavigator(
-  screens, 
+  screens,
   { defaultNavigationOptions: {
     header: null,
   }
