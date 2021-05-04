@@ -8,7 +8,7 @@ class PlayerItem extends React.Component {
      <View style={styles.main_container}>
        <Image
         style={styles.image}
-        source={{uri: "image"}}
+        source={{uri: joueur.icon}}
        />
        <View style={styles.content_container}>
 
@@ -47,8 +47,7 @@ const styles = StyleSheet.create({
   image:{
     width: 120,
     height: 180,
-    margin: 5,
-    backgroundColor: 'gray'
+    margin: 5
   }
 })
 export default PlayerItem
