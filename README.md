@@ -107,15 +107,15 @@ Grâce à Expo il est possible de développer l'application en observant le rés
 - Cloner le repository GitHub sur son ordinateur.
 
 - Installer les packages nodes dont dépendent le projet en exécutant la commande à la racine du projet:
-> npm install
+> `npm install`
 
 - Exécuter à la racine du projet :
-> expo start
+> `expo start`
 
 Cette comande devrait ouvrir une page dans votre navigateur. Avec l'application Expo téléchargée sur votre smartphone, vous pouvez scanner le QR code qui apparait et ouvrir l'application sur votre téléphone.
 
 Astuce Android : Si vous utiliser comme moi android et que vous préférez passer par un câble (plus rapide et plus fiable), utiliser plutôt cette commande :
-> expo start --localhost --android
+> `expo start --localhost --android`
 
 *Remarques* :\
 Pour que cela fonctionne, il faut que vous activiez le mode développeur de votre smartphone.\
