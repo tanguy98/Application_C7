@@ -155,6 +155,7 @@ Pour relier l’application à la base de données il faut entrer les lignes de 
 
 Enfin pour récupérer les données de la base de données on utilise des commandes SQL (je ne l’ai pas encore fait sur l’application mais j’ai l’exemple du code Toss où ils utilisent la commande Get pour accéder aux données) :
 
+```
 >    _loadMatchs () {\
 >        this.setState({donnees: []}, ()=>{\
 >            const sport = 'RugbyM'\
@@ -178,5 +179,6 @@ Enfin pour récupérer les données de la base de données on utilise des comman
 >            .then(() => this.setState({loading: false}))\
 >        })\
 >    }
+```
 
 Pour conclure j’avais juste réussi à relier mon projet firebase et l’application (normalement ça marche), il me reste à écrire toutes les fonctions de récupération des données sur la database. Ensuite il faudrait vérifier que tout s’actualise sur l’application et réfléchir à comment modifier cette base de données en live pour avoir les scores des matchs (soit on modifie directement la base de données mais je ne pense pas que ça soit le plus simple soit dans la version administrateur de l’appli on code un onglet qui nous permettrait de mettre à jour la base de données par exemple on sélectionnerait les 2 équipes dans 2 menus déroulant on écrirait le score et en cliquand sur un bouton submit cela mettrait à jour la base de données).
