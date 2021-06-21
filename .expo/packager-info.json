@@ -1,10 +1,10 @@
 {
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 9600,
-  "expoServerNgrokUrl": "https://ar-dq5.tanguyhtte.application-c7.exp.direct",
-  "packagerNgrokUrl": "https://packager.ar-dq5.tanguyhtte.application-c7.exp.direct",
-  "ngrokPid": 6836,
-  "devToolsPort": 19002,
-  "webpackServerPort": null
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerPort": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
+  "webpackServerPort": null,
+  "devToolsPort": 19002
 }

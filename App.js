@@ -2,7 +2,7 @@ import 'react-native-gesture-handler'; // nothing above this import
 
 //IMPORTS
 
-import { AppLoading } from 'expo';
+import AppLoading from 'expo-app-loading';
 import { Asset } from 'expo-asset';
 import * as Font from 'expo-font';
 import React from 'react';
@@ -11,6 +11,29 @@ import { Ionicons } from '@expo/vector-icons';
 import SplashScreen from 'react-native-splash-screen';
 
 import AppNavigator from './navigation/AppNavigator';
+
+import * as firebase from 'firebase'
+import 'firebase/firestore';
+
+//Rajouter les liaisons avec la base de donnée
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDP_Dbevczlh2eN1Zo9AyUvLZICoxnKhIc",
+    authDomain: "fzdf-2c9ff.firebaseapp.com",
+    databaseURL: "https://fzdf-2c9ff.firebaseio.com",
+    projectId: "fzdf-2c9ff",
+    storageBucket: "fzdf-2c9ff.appspot.com",
+    messagingSenderId: "750961760063",
+    appId: "1:750961760063:web:9ca0c45a75f67663c8e58a"
+  };
+
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+ }else {
+    firebase.app(); // if already initialized, use that one
+ }
+
+//firebase.initializeApp(firebaseConfig);
 
 // COMPONENT
 class App extends React.Component{

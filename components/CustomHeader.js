@@ -2,9 +2,11 @@
 
 import React from 'react';
 import {Image,StyleSheet, View} from 'react-native';
-import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
+import { Container, Header, Left, Body, Right, Button, Icon, Title} from 'native-base';
+import {TouchableOpacity} from "react-native"
 import Constants from 'expo-constants';
 import {StatusBar} from 'react-native';
+import { NavigationContainer } from 'react-navigation';
 
 import icon from '../assets/images/icon.png';
 
@@ -21,12 +23,12 @@ class CustomHeader extends React.Component {
 
     //StatusBar.setBarStyle("light-content");
     //StatusBar.setTranslucent(true);
-  
+    //console.log(this.props.navigation)
     return (
 
         <Container>
             {/*<View style={{height: Constants.statusBarHeight}} />*/}
-            <Header style={{ height: 65, backgroundColor:'#549E5E'}} androidStatusBarColor='#549E5E' >
+            <Header style={{ height: 60, backgroundColor:'#549E5E'}} androidStatusBarColor='#549E5E' >
                 <Left>
                     {
                         this.props.isHome?
@@ -42,10 +44,13 @@ class CustomHeader extends React.Component {
                 <Body>
                     <Title>{this.props.title}</Title>
                 </Body>
+                <TouchableOpacity onPress={()=>this.props.navigation.goBack()}>
 
                 <Right>
+                    
                     <Image source={icon} style={{height:40, width:40, resizeMode: 'contain', tintColor: 'white'}} />
                 </Right>
+                </TouchableOpacity>
 
             </Header>
         </Container>

@@ -32,6 +32,7 @@ const BottomTabNavigator = createBottomTabNavigator({
    
     Program: {
       screen: ProgramStack,
+      name : "Accueil",
       navigationOptions: {
         tabBarLabel: 'Programme',
         tabBarIcon: ({ focused, color, size, tintColor}) => {return(

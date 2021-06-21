@@ -3,11 +3,29 @@ import React from 'react';
 import {View, Text, Button} from 'native-base';
 
 import CustomHeader from '../components/CustomHeader';
+import { useNavigation } from '@react-navigation/native';
+import { connect } from 'react-redux'
 
+
+function GoToButton({ screenName }) {
+  const navigation = useNavigation();
+  return (
+    <Button
+      title={`Go to ${P2}`}
+      onPress={() => navigation.navigate(Program2)}
+    />
+  );
+}
 //COMPONENT :
 class ProgramScreen extends React.Component {
-
+  constructor(props){
+    super(props)
+    this.state=({
+    masculin:true,donneesF:[],teamsF:[], teamsH:[], donneesH : [], loading:true
+      })
+  }
   render() {
+    //console.log(this.props)
     return (
       <View style={{flex:1}}>
 

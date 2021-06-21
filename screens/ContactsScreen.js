@@ -25,7 +25,7 @@ class ContactsScreen extends React.Component {
     Animated.timing(
       this.state.topPosition,
       {
-          toValue:height-50,
+          toValue:height-100,
           duration:500
       }
   ).start()

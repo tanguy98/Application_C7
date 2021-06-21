@@ -11,91 +11,16 @@ import {
   View,
   FlatList,
 } from 'react-native';
-import { Icon} from 'native-base';
+import { Icon, Item} from 'native-base';
 import {SearchBar} from 'react-native-elements';
 import { MonoText } from '../components/StyledText';
 import CustomHeader from '../components/CustomHeader';
+import * as firebase from 'firebase'
+import 'firebase/firestore';
 
 
-//CONSTANTS :
-const listeStaffeurs = [
-  {
-    "staffeur": 'Tancrède de Guigné',
-    "icon": 'person',
-    "idStaffeur" : '1'
-  },
-  {
-    "staffeur": 'Saad Chtouki',
-    "icon": 'person',
-    "idStaffeur" : '2'
-  },
-  {
-    "staffeur": 'Corentin Delloye',
-    "icon": 'person',
-    "idStaffeur" : '3'
-  },
-  {
-    "staffeur": 'Pascal Raillé',
-    "icon": 'person',
-    "idStaffeur" : '4'
-  },
-  {
-    "staffeur": 'Tanguy Houette',
-    "icon": 'person',
-    "idStaffeur" : '5'
-  },
-  {
-    "staffeur": 'François Pinard',
-    "icon": 'person',
-    "idStaffeur" : '6'
-  },
-  {
-    "staffeur": 'Antoine Beauvois',
-    "icon": 'person',
-    "idStaffeur" : '7'
-  },
-  {
-    "staffeur": 'Aude Gadenne',
-    "icon": 'person',
-    "idStaffeur" : '8'
-  },
-  {
-    "staffeur": 'Adrein Mitard',
-    "icon": 'person',
-    "idStaffeur" : '9'
-  },
-  {
-    "staffeur": 'Romain Merle',
-    "icon": 'person',
-    "idStaffeur" : '10'
-  },
-  {
-    "staffeur": 'Anaïs Chossegros',
-    "icon": 'person',
-    "idStaffeur" : '11'
-  },
-  {
-    "staffeur": 'Marc Grasser',
-    "icon": 'person',
-    "idStaffeur" : '12'
-  },
-  {
-    "staffeur": 'Kawtar Rifi',
-    "icon": 'person',
-    "idStaffeur" : '13'
-  },
-  {
-    "staffeur": 'Matthieu de Cibeins',
-    "icon": 'person',
-    "idStaffeur" : '14'
-  }
-]
 
-listeStaffeurs.sort(function(a, b) {
-  var textA = a.staffeur.toUpperCase();
-  var textB = b.staffeur.toUpperCase();
-  return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
-});
+
 
 
 //COMPONENT :
@@ -107,20 +32,87 @@ class StaffScreen extends React.Component {
   };
 
   constructor(props) {
-    super(props)
+    super(props),
     this.state = {
       valueSearch:'',
-      listeStaffeurs:listeStaffeurs,
       listeStaffeursRecherches:[],
       onResearch:false,
-      recherchesRecentes:['','','']
+      recherchesRecentes:['','',''],
+      staffeurs : [],
+      loading : true
     };
-    this.listeStaffeurs=listeStaffeurs
   }
+  _displayLoading() {
+    if (this.state.loading) {
+      return (
+        <View style={styles.loading_container}>
+          <ActivityIndicator size='large' />
+        </View>
+      )
+    }
+  }
+  componentDidMount(){
+    this._loadDataStaffeur()
+    this.setState({
+      loading : true,
+      
+    })
+  }
+  
+  
+
+  
+  _loadDataStaffeur(){
+    this.setState({staffeurs:[]},()=>{
+        var that=this
+        
+        var db = firebase.firestore();
+    
+        var docRef = db.collection("Staffeurs")
+        docRef.get().then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc) {
+                var match=doc.data()
+                that.setState({staffeurs:that.state.staffeurs.concat(match)})
+                
+                
+            });
+        })
+        .then(()=>this.loadStaffeurs())
+        .catch(function(error) {
+            console.log("Error getting document:", error);
+        })
+        .then(()=>this.setState({loading:false}))
+        
+    }
+    )
+  }
+  loadStaffeurs(){
+        
+    var liste_staffeurs=this.state.staffeurs
+    longueur=liste_staffeurs.length
+    
+    var staffeurs=[]
+
+    
+    for (i=0;i<longueur;i++){
+        
+        var staffeur_courant=liste_staffeurs[i]
+        //var name={staffeur : staffeur_courant.Name}
+        
+        staffeurs.push({staffeur : staffeur_courant.Name,icon : staffeur_courant.icon, idStaffeur : staffeur_courant.idStaffeur})
+        //staffeurs.push({icon : staffeur_courant.icon})
+        
+    }
+    //matchsF = {matchName}
+    
+    this.setState({staffeurs : staffeurs})
+  }
+  
 
   triDonnes(){
     var text=this.state.valueSearch.toUpperCase()
-    var tableau = this.state.listeStaffeurs.filter(function(staffeur){
+    var staffeurNom = ""
+    var tableau = this.state.staffeurs.filter(function(staffeur){
       staffeurNom=staffeur.staffeur.toUpperCase()
       return((staffeurNom.indexOf(text)!=-1)&&(staffeurNom!='NOM'))})
     this.setState({listeStaffeursRecherches:tableau})
@@ -136,9 +128,9 @@ class StaffScreen extends React.Component {
   }
 
   pressStaffeur(staffeur,idStaffeur){
-
+    var title = "Staffeur"
     this.props.navigation.navigate("PdfScreen", {
-      title:'Staffeur X',
+      title:title,
       uri:'https://drive.google.com/file/d/1XYgcKsoA5POTLL91uOzy_bJPt8H0Wwfp/view?usp=sharing',
     });
 
@@ -160,7 +152,7 @@ class StaffScreen extends React.Component {
                     <Text style={{fontWeight:'bold'}}>{item.staffeur}</Text>
                   </View>
                   <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
-                    <Icon style={{fontSize:20}} name='person'/>
+                    <Icon style={{fontSize:20}} name={item.icon}/>
                   </View>
                 </View>
               </TouchableOpacity>
@@ -172,11 +164,14 @@ class StaffScreen extends React.Component {
     }
 
     if ((!this.state.onResearch)&&!((this.state.recherchesRecentes[0].length>0)||(this.state.recherchesRecentes[1].length>0)||(this.state.recherchesRecentes[2].length>0))){
+      if (this.state.valueSearch != '') {this.setState({valueSearch : '', listeStaffeursRecherches:[],onResearch:false})}
+      if (this.state.staffeurs != []){
+
       return(
         <View>
             <FlatList
-              data={listeStaffeurs}
-              keyExtractor={(item)=>item.staffeur.toString()}
+              data={this.state.staffeurs}
+              keyExtractor={(item)=>item.idStaffeur}
               renderItem={({item})=>
               <TouchableOpacity style={{height:50,justifyContent:'center'}}
               onPress={()=>this.pressStaffeur(item.staffeur,item.idStaffeur)}>
@@ -185,7 +180,7 @@ class StaffScreen extends React.Component {
                     <Text style={{fontWeight:'bold'}}>{item.staffeur}</Text>
                   </View>
                   <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
-                    <Icon style={{fontSize:20}} name='person'/>
+                    <Icon style={{fontSize:20}} name = {item.icon}/>
                   </View>
                 </View>
               </TouchableOpacity>
@@ -193,12 +188,24 @@ class StaffScreen extends React.Component {
             />
         </View>
 
-      )
+      )}
+      else {
+        return(
+          <View>
+            
+              {this._displayLoading}
+            
+        </View>
+        )
+      }
+
+
     }
   }
 
 
   render() {
+    
     const {search} = this.state;
     return (
       <View style={{flex:1}}>
@@ -330,6 +337,15 @@ const styles = StyleSheet.create({
   titleText: {
     fontSize: 35,
     color:'white'
+  },
+  loading_container: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
 
