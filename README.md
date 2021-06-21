@@ -111,15 +111,21 @@ Grâce à Expo il est possible de développer l'application en observant le rés
 - Cloner le repository GitHub sur son ordinateur.
 
 - Installer les packages nodes dont dépendent le projet en exécutant la commande à la racine du projet:
-> npm install
+```
+npm install
+```
 
 - Exécuter à la racine du projet :
-> expo start
+```
+expo start
+```
 
 Cette comande devrait ouvrir une page dans votre navigateur. Avec l'application Expo téléchargée sur votre smartphone, vous pouvez scanner le QR code qui apparait et ouvrir l'application sur votre téléphone.
 
 Astuce Android : Si vous utiliser comme moi android et que vous préférez passer par un câble (plus rapide et plus fiable), utiliser plutôt cette commande :
-> expo start --localhost --android
+```
+expo start --localhost --android
+```
 
 *Remarques* :\
 Pour que cela fonctionne, il faut que vous activiez le mode développeur de votre smartphone.\
@@ -143,44 +149,48 @@ Avec cet outil, il est donc de modifier et de créer directement la base de donn
 
 Pour relier l’application à la base de données il faut entrer les lignes de code suivantes dans le component Database (avec tous les paramètres APIKey etc qui sont trouvent dans les paramètres de notre projet Firebase) :
 
->const firebase = require("firebase");\
->require("firebase/firestore");\
->const firebaseConfig = {\
->  apiKey: "AIzaSyDP_Dbevczlh2eN1Zo9AyUvLZICoxnKhIc",\
->  authDomain: "fzdf-2c9ff.firebaseapp.com",\
->  databaseURL: "https://fzdf-2c9ff.firebaseio.com", \
->  projectId: "fzdf-2c9ff",\
->  storageBucket: "fzdf-2c9ff.appspot.com",\
->  messagingSenderId: "750961760063",\
->  appId: "1:750961760063:web:9ca0c45a75f67663c8e58a",\
->  persistence: true,\
->};\
->firebase.initializeApp(firebaseConfig);
+```
+const firebase = require("firebase");\
+require("firebase/firestore");\
+const firebaseConfig = {\
+  apiKey: "AIzaSyDP_Dbevczlh2eN1Zo9AyUvLZICoxnKhIc",\
+  authDomain: "fzdf-2c9ff.firebaseapp.com",\
+  databaseURL: "https://fzdf-2c9ff.firebaseio.com", \
+  projectId: "fzdf-2c9ff",\
+  storageBucket: "fzdf-2c9ff.appspot.com",\
+  messagingSenderId: "750961760063",\
+  appId: "1:750961760063:web:9ca0c45a75f67663c8e58a",\
+  persistence: true,\
+};\
+firebase.initializeApp(firebaseConfig);
+```
 
 Enfin pour récupérer les données de la base de données on utilise des commandes SQL (je ne l’ai pas encore fait sur l’application mais j’ai l’exemple du code Toss où ils utilisent la commande Get pour accéder aux données) :
 
->    _loadMatchs () {\
->        this.setState({donnees: []}, ()=>{\
->            const sport = 'RugbyM'\
->            var that = this\
->            \
->            var db = firebase.firestore();\
->            db.settings({\
->                timestampsInSnapshots: true\
->                });\
->            var docRef = db.collection("Sports").doc(sport).collection("Matchs").where("Phase","==",'FINALES')\
->            docRef.get().then(function (querySnapshot) {\
->                querySnapshot.forEach(function (doc) {\
->                    var match = doc.data()\
->                    that.setState({donnees:that.state.donnees.concat(match)})\
->                });\
->            })\
->            .then(() => this.sortMatchs())\
->            .catch(function (error) {\
->                console.log("Error getting document:", error);\
->            })\
->            .then(() => this.setState({loading: false}))\
->        })\
->    }
+```
+    _loadMatchs () {\
+        this.setState({donnees: []}, ()=>{\
+            const sport = 'RugbyM'\
+            var that = this\
+            \
+            var db = firebase.firestore();\
+            db.settings({\
+                timestampsInSnapshots: true\
+                });\
+            var docRef = db.collection("Sports").doc(sport).collection("Matchs").where("Phase","==",'FINALES')\
+            docRef.get().then(function (querySnapshot) {\
+                querySnapshot.forEach(function (doc) {\
+                    var match = doc.data()\
+                    that.setState({donnees:that.state.donnees.concat(match)})\
+                });\
+            })\
+            .then(() => this.sortMatchs())\
+            .catch(function (error) {\
+                console.log("Error getting document:", error);\
+            })\
+            .then(() => this.setState({loading: false}))\
+        })\
+    }
+```
 
 Pour conclure j’avais juste réussi à relier mon projet firebase et l’application (normalement ça marche), il me reste à écrire toutes les fonctions de récupération des données sur la database. Ensuite il faudrait vérifier que tout s’actualise sur l’application et réfléchir à comment modifier cette base de données en live pour avoir les scores des matchs (soit on modifie directement la base de données mais je ne pense pas que ça soit le plus simple soit dans la version administrateur de l’appli on code un onglet qui nous permettrait de mettre à jour la base de données par exemple on sélectionnerait les 2 équipes dans 2 menus déroulant on écrirait le score et en cliquand sur un bouton submit cela mettrait à jour la base de données).
